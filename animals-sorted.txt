@@ -1,0 +1,9 @@
+bear
+cow
+dog
+doveduck
+girafle
+lamb
+lion
+pig
+tiger

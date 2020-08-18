@@ -1,0 +1,2014 @@
+Plugin ID,CVE,CVSS,Risk,Host,Protocol,Port,Name,Synopsis,Description,Solution,See Also,Plugin Output,Asset UUID,Vulnerability State,IP Address,FQDN,NetBios,OS,MAC Address,Plugin Family,CVSS Base Score,CVSS Temporal Score,CVSS Temporal Vector,CVSS Vector,CVSS3 Base Score,CVSS3 Temporal Score,CVSS3 Temporal Vector,CVSS3 Vector,System Type,Host Start,Host End
+57582,,6.4,High,107.112.170.197,TCP,25,SSL Self-Signed Certificate,"The SSL certificate chain for this service ends in an unrecognized
+self-signed certificate.","The X.509 certificate chain for this service is not signed by a
+recognized certificate authority.  If the remote host is a public host
+in production, this nullifies the use of SSL as anyone could establish
+a man-in-the-middle attack against the remote host. 
+
+Note that this plugin does not check for certificate chains that end
+in a certificate that is not self-signed, but is signed by an
+unrecognized certificate authority.",Purchase or generate a proper certificate for this service.,,"
+The following certificate was found at the top of the certificate
+chain sent by the remote host, but is self-signed and was not
+found in the list of known certificate authorities :
+
+|-Subject : CN=ds130-4-245-24.gs.sbc.com
+",a2b1f65f-a694-4faf-bccb-1e09bc5b7cae,Active,107.112.170.197,,,Linux Kernel 4.4 on Ubuntu 16.04 (xenial),,General,6.4,,,AV:N/AC:L/Au:N/C:P/I:P/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:07:29.579Z
+65821,CVE-2013-2566,2.6,High,107.112.170.197,TCP,25,SSL RC4 Cipher Suites Supported (Bar Mitzvah),The remote service supports the use of the RC4 cipher.,"The remote host supports the use of RC4 in one or more cipher suites.
+The RC4 cipher is flawed in its generation of a pseudo-random stream
+of bytes so that a wide variety of small biases are introduced into
+the stream, decreasing its randomness.
+
+If plaintext is repeatedly encrypted (e.g., HTTP cookies), and an
+attacker is able to obtain many (i.e., tens of millions) ciphertexts,
+the attacker may be able to derive the plaintext.","Reconfigure the affected application, if possible, to avoid use of RC4
+ciphers. Consider using TLS 1.2 with AES-GCM suites subject to browser
+and web server support.","http://www.nessus.org/u?ac7327a0
+http://cr.yp.to/talks/2013.03.12/slides.pdf
+http://www.isg.rhul.ac.uk/tls/
+https://www.imperva.com/docs/HII_Attacking_SSL_when_using_RC4.pdf","
+List of RC4 cipher suites supported by the remote server :
+
+  High Strength Ciphers (>= 112-bit key)
+
+    ADH-RC4-MD5                  Kx=DH          Au=None     Enc=RC4(128)             Mac=MD5    
+    ECDHE-RSA-RC4-SHA            Kx=ECDH        Au=RSA      Enc=RC4(128)             Mac=SHA1   
+    AECDH-RC4-SHA                Kx=ECDH        Au=None     Enc=RC4(128)             Mac=SHA1   
+    RC4-MD5                      Kx=RSA         Au=RSA      Enc=RC4(128)             Mac=MD5    
+    RC4-SHA                      Kx=RSA         Au=RSA      Enc=RC4(128)             Mac=SHA1   
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+",a2b1f65f-a694-4faf-bccb-1e09bc5b7cae,Active,107.112.170.197,,,Linux Kernel 4.4 on Ubuntu 16.04 (xenial),,General,2.6,2.2,E:U/RL:ND/RC:C,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:07:29.579Z
+65821,CVE-2015-2808,2.6,High,107.112.170.197,TCP,25,SSL RC4 Cipher Suites Supported (Bar Mitzvah),The remote service supports the use of the RC4 cipher.,"The remote host supports the use of RC4 in one or more cipher suites.
+The RC4 cipher is flawed in its generation of a pseudo-random stream
+of bytes so that a wide variety of small biases are introduced into
+the stream, decreasing its randomness.
+
+If plaintext is repeatedly encrypted (e.g., HTTP cookies), and an
+attacker is able to obtain many (i.e., tens of millions) ciphertexts,
+the attacker may be able to derive the plaintext.","Reconfigure the affected application, if possible, to avoid use of RC4
+ciphers. Consider using TLS 1.2 with AES-GCM suites subject to browser
+and web server support.","http://www.nessus.org/u?ac7327a0
+http://cr.yp.to/talks/2013.03.12/slides.pdf
+http://www.isg.rhul.ac.uk/tls/
+https://www.imperva.com/docs/HII_Attacking_SSL_when_using_RC4.pdf","
+List of RC4 cipher suites supported by the remote server :
+
+  High Strength Ciphers (>= 112-bit key)
+
+    ADH-RC4-MD5                  Kx=DH          Au=None     Enc=RC4(128)             Mac=MD5    
+    ECDHE-RSA-RC4-SHA            Kx=ECDH        Au=RSA      Enc=RC4(128)             Mac=SHA1   
+    AECDH-RC4-SHA                Kx=ECDH        Au=None     Enc=RC4(128)             Mac=SHA1   
+    RC4-MD5                      Kx=RSA         Au=RSA      Enc=RC4(128)             Mac=MD5    
+    RC4-SHA                      Kx=RSA         Au=RSA      Enc=RC4(128)             Mac=SHA1   
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+",a2b1f65f-a694-4faf-bccb-1e09bc5b7cae,Active,107.112.170.197,,,Linux Kernel 4.4 on Ubuntu 16.04 (xenial),,General,2.6,2.2,E:U/RL:ND/RC:C,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:07:29.579Z
+104743,,0,High,107.112.170.197,TCP,25,TLS Version 1.0 Protocol Detection,The remote service encrypts traffic using an older version of TLS.,"The remote service accepts connections encrypted using TLS 1.0. TLS 1.0 has a
+number of cryptographic design flaws. Modern implementations of TLS 1.0
+mitigate these problems, but newer versions of TLS like 1.1 and 1.2 are
+designed against these flaws and should be used whenever possible.
+
+PCI DSS v3.2 requires that TLS 1.0 be disabled entirely by June 30,
+2018, except for POS POI terminals (and the SSL/TLS termination
+points to which they connect) that can be verified as not being
+susceptible to any known exploits.","Enable support for TLS 1.1 and 1.2, and disable support for TLS 1.0.",,TLSv1 is enabled and the server supports at least one cipher.,a2b1f65f-a694-4faf-bccb-1e09bc5b7cae,Active,107.112.170.197,,,Linux Kernel 4.4 on Ubuntu 16.04 (xenial),,Service detection,,,,,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:07:29.579Z
+42873,CVE-2016-2183,5,High,107.112.170.197,TCP,25,SSL Medium Strength Cipher Suites Supported (SWEET32),The remote service supports the use of medium strength SSL ciphers.,"The remote host supports the use of SSL ciphers that offer medium
+strength encryption. Nessus regards medium strength as any encryption
+that uses key lengths at least 64 bits and less than 112 bits, or 
+else that uses the 3DES encryption suite.
+
+Note that it is considerably easier to circumvent medium strength
+encryption if the attacker is on the same physical network.","Reconfigure the affected application if possible to avoid use of
+medium strength ciphers.","https://www.openssl.org/blog/blog/2016/08/24/sweet32/
+https://sweet32.info","
+  Medium Strength Ciphers (> 64-bit and < 112-bit key, or 3DES)
+
+    EDH-RSA-DES-CBC3-SHA         Kx=DH          Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+    ADH-DES-CBC3-SHA             Kx=DH          Au=None     Enc=3DES-CBC(168)        Mac=SHA1   
+    ECDHE-RSA-DES-CBC3-SHA       Kx=ECDH        Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+    AECDH-DES-CBC3-SHA           Kx=ECDH        Au=None     Enc=3DES-CBC(168)        Mac=SHA1   
+    DES-CBC3-SHA                 Kx=RSA         Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+",a2b1f65f-a694-4faf-bccb-1e09bc5b7cae,Active,107.112.170.197,,,Linux Kernel 4.4 on Ubuntu 16.04 (xenial),,General,5,,,AV:N/AC:L/Au:N/C:P/I:N/A:N,7.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:07:29.579Z
+90317,,4.3,High,107.112.171.42,TCP,22,SSH Weak Algorithms Supported,"The remote SSH server is configured to allow weak encryption
+algorithms or no algorithm at all.","Nessus has detected that the remote SSH server is configured to use
+the Arcfour stream cipher or no cipher at all. RFC 4253 advises
+against using Arcfour due to an issue with weak keys.","Contact the vendor or consult product documentation to remove the weak
+ciphers.",https://tools.ietf.org/html/rfc4253#section-6.3,"
+The following weak server-to-client encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+
+The following weak client-to-server encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+",86165331-ff32-466c-9bb1-bc31fac65472,Active,107.112.171.42,,,Linux Kernel 2.2,,Misc.,4.3,,,AV:N/AC:M/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:07:29.579Z
+71049,,2.6,High,107.112.171.42,TCP,22,SSH Weak MAC Algorithms Enabled,"The remote SSH server is configured to allow MD5 and 96-bit MAC
+algorithms.","The remote SSH server is configured to allow either MD5 or 96-bit MAC
+algorithms, both of which are considered weak.
+
+Note that this plugin only checks for the options of the SSH server,
+and it does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable MD5 and
+96-bit MAC algorithms.",,"
+The following client-to-server Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+
+The following server-to-client Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+",86165331-ff32-466c-9bb1-bc31fac65472,Active,107.112.171.42,,,Linux Kernel 2.2,,Misc.,2.6,,,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:07:29.579Z
+90317,,4.3,High,107.112.171.46,TCP,22,SSH Weak Algorithms Supported,"The remote SSH server is configured to allow weak encryption
+algorithms or no algorithm at all.","Nessus has detected that the remote SSH server is configured to use
+the Arcfour stream cipher or no cipher at all. RFC 4253 advises
+against using Arcfour due to an issue with weak keys.","Contact the vendor or consult product documentation to remove the weak
+ciphers.",https://tools.ietf.org/html/rfc4253#section-6.3,"
+The following weak server-to-client encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+
+The following weak client-to-server encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+",a153237b-b2a1-4597-91e9-598f2abed8d5,Active,107.112.171.46,,,Linux Kernel 2.2,,Misc.,4.3,,,AV:N/AC:M/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:07:29.579Z
+71049,,2.6,High,107.112.171.46,TCP,22,SSH Weak MAC Algorithms Enabled,"The remote SSH server is configured to allow MD5 and 96-bit MAC
+algorithms.","The remote SSH server is configured to allow either MD5 or 96-bit MAC
+algorithms, both of which are considered weak.
+
+Note that this plugin only checks for the options of the SSH server,
+and it does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable MD5 and
+96-bit MAC algorithms.",,"
+The following client-to-server Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+
+The following server-to-client Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+",a153237b-b2a1-4597-91e9-598f2abed8d5,Active,107.112.171.46,,,Linux Kernel 2.2,,Misc.,2.6,,,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:07:29.579Z
+104743,,0,High,107.112.171.46,TCP,9443,TLS Version 1.0 Protocol Detection,The remote service encrypts traffic using an older version of TLS.,"The remote service accepts connections encrypted using TLS 1.0. TLS 1.0 has a
+number of cryptographic design flaws. Modern implementations of TLS 1.0
+mitigate these problems, but newer versions of TLS like 1.1 and 1.2 are
+designed against these flaws and should be used whenever possible.
+
+PCI DSS v3.2 requires that TLS 1.0 be disabled entirely by June 30,
+2018, except for POS POI terminals (and the SSL/TLS termination
+points to which they connect) that can be verified as not being
+susceptible to any known exploits.","Enable support for TLS 1.1 and 1.2, and disable support for TLS 1.0.",,TLSv1 is enabled and the server supports at least one cipher.,a153237b-b2a1-4597-91e9-598f2abed8d5,Active,107.112.171.46,,,Linux Kernel 2.2,,Service detection,,,,,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:07:29.579Z
+42873,CVE-2016-2183,5,High,107.112.171.46,TCP,9443,SSL Medium Strength Cipher Suites Supported (SWEET32),The remote service supports the use of medium strength SSL ciphers.,"The remote host supports the use of SSL ciphers that offer medium
+strength encryption. Nessus regards medium strength as any encryption
+that uses key lengths at least 64 bits and less than 112 bits, or 
+else that uses the 3DES encryption suite.
+
+Note that it is considerably easier to circumvent medium strength
+encryption if the attacker is on the same physical network.","Reconfigure the affected application if possible to avoid use of
+medium strength ciphers.","https://www.openssl.org/blog/blog/2016/08/24/sweet32/
+https://sweet32.info","
+  Medium Strength Ciphers (> 64-bit and < 112-bit key, or 3DES)
+
+    PSK-3DES-EDE-CBC-SHA         Kx=PSK         Au=PSK      Enc=3DES-CBC(168)        Mac=SHA1   
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+",a153237b-b2a1-4597-91e9-598f2abed8d5,Active,107.112.171.46,,,Linux Kernel 2.2,,General,5,,,AV:N/AC:L/Au:N/C:P/I:N/A:N,7.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:07:29.579Z
+57582,,6.4,High,107.112.170.196,TCP,25,SSL Self-Signed Certificate,"The SSL certificate chain for this service ends in an unrecognized
+self-signed certificate.","The X.509 certificate chain for this service is not signed by a
+recognized certificate authority.  If the remote host is a public host
+in production, this nullifies the use of SSL as anyone could establish
+a man-in-the-middle attack against the remote host. 
+
+Note that this plugin does not check for certificate chains that end
+in a certificate that is not self-signed, but is signed by an
+unrecognized certificate authority.",Purchase or generate a proper certificate for this service.,,"
+The following certificate was found at the top of the certificate
+chain sent by the remote host, but is self-signed and was not
+found in the list of known certificate authorities :
+
+|-Subject : CN=ds130-4-245-24.gs.sbc.com
+",075745ad-5b59-4c81-b233-4b55cbe59034,Active,107.112.170.196,,,Linux Kernel 4.4 on Ubuntu 16.04 (xenial),,General,6.4,,,AV:N/AC:L/Au:N/C:P/I:P/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+65821,CVE-2013-2566,2.6,High,107.112.170.196,TCP,25,SSL RC4 Cipher Suites Supported (Bar Mitzvah),The remote service supports the use of the RC4 cipher.,"The remote host supports the use of RC4 in one or more cipher suites.
+The RC4 cipher is flawed in its generation of a pseudo-random stream
+of bytes so that a wide variety of small biases are introduced into
+the stream, decreasing its randomness.
+
+If plaintext is repeatedly encrypted (e.g., HTTP cookies), and an
+attacker is able to obtain many (i.e., tens of millions) ciphertexts,
+the attacker may be able to derive the plaintext.","Reconfigure the affected application, if possible, to avoid use of RC4
+ciphers. Consider using TLS 1.2 with AES-GCM suites subject to browser
+and web server support.","http://www.nessus.org/u?ac7327a0
+http://cr.yp.to/talks/2013.03.12/slides.pdf
+http://www.isg.rhul.ac.uk/tls/
+https://www.imperva.com/docs/HII_Attacking_SSL_when_using_RC4.pdf","
+List of RC4 cipher suites supported by the remote server :
+
+  High Strength Ciphers (>= 112-bit key)
+
+    ADH-RC4-MD5                  Kx=DH          Au=None     Enc=RC4(128)             Mac=MD5    
+    ECDHE-RSA-RC4-SHA            Kx=ECDH        Au=RSA      Enc=RC4(128)             Mac=SHA1   
+    AECDH-RC4-SHA                Kx=ECDH        Au=None     Enc=RC4(128)             Mac=SHA1   
+    RC4-MD5                      Kx=RSA         Au=RSA      Enc=RC4(128)             Mac=MD5    
+    RC4-SHA                      Kx=RSA         Au=RSA      Enc=RC4(128)             Mac=SHA1   
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+",075745ad-5b59-4c81-b233-4b55cbe59034,Active,107.112.170.196,,,Linux Kernel 4.4 on Ubuntu 16.04 (xenial),,General,2.6,2.2,E:U/RL:ND/RC:C,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+65821,CVE-2015-2808,2.6,High,107.112.170.196,TCP,25,SSL RC4 Cipher Suites Supported (Bar Mitzvah),The remote service supports the use of the RC4 cipher.,"The remote host supports the use of RC4 in one or more cipher suites.
+The RC4 cipher is flawed in its generation of a pseudo-random stream
+of bytes so that a wide variety of small biases are introduced into
+the stream, decreasing its randomness.
+
+If plaintext is repeatedly encrypted (e.g., HTTP cookies), and an
+attacker is able to obtain many (i.e., tens of millions) ciphertexts,
+the attacker may be able to derive the plaintext.","Reconfigure the affected application, if possible, to avoid use of RC4
+ciphers. Consider using TLS 1.2 with AES-GCM suites subject to browser
+and web server support.","http://www.nessus.org/u?ac7327a0
+http://cr.yp.to/talks/2013.03.12/slides.pdf
+http://www.isg.rhul.ac.uk/tls/
+https://www.imperva.com/docs/HII_Attacking_SSL_when_using_RC4.pdf","
+List of RC4 cipher suites supported by the remote server :
+
+  High Strength Ciphers (>= 112-bit key)
+
+    ADH-RC4-MD5                  Kx=DH          Au=None     Enc=RC4(128)             Mac=MD5    
+    ECDHE-RSA-RC4-SHA            Kx=ECDH        Au=RSA      Enc=RC4(128)             Mac=SHA1   
+    AECDH-RC4-SHA                Kx=ECDH        Au=None     Enc=RC4(128)             Mac=SHA1   
+    RC4-MD5                      Kx=RSA         Au=RSA      Enc=RC4(128)             Mac=MD5    
+    RC4-SHA                      Kx=RSA         Au=RSA      Enc=RC4(128)             Mac=SHA1   
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+",075745ad-5b59-4c81-b233-4b55cbe59034,Active,107.112.170.196,,,Linux Kernel 4.4 on Ubuntu 16.04 (xenial),,General,2.6,2.2,E:U/RL:ND/RC:C,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+104743,,0,High,107.112.170.196,TCP,25,TLS Version 1.0 Protocol Detection,The remote service encrypts traffic using an older version of TLS.,"The remote service accepts connections encrypted using TLS 1.0. TLS 1.0 has a
+number of cryptographic design flaws. Modern implementations of TLS 1.0
+mitigate these problems, but newer versions of TLS like 1.1 and 1.2 are
+designed against these flaws and should be used whenever possible.
+
+PCI DSS v3.2 requires that TLS 1.0 be disabled entirely by June 30,
+2018, except for POS POI terminals (and the SSL/TLS termination
+points to which they connect) that can be verified as not being
+susceptible to any known exploits.","Enable support for TLS 1.1 and 1.2, and disable support for TLS 1.0.",,TLSv1 is enabled and the server supports at least one cipher.,075745ad-5b59-4c81-b233-4b55cbe59034,Active,107.112.170.196,,,Linux Kernel 4.4 on Ubuntu 16.04 (xenial),,Service detection,,,,,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+42873,CVE-2016-2183,5,High,107.112.170.196,TCP,25,SSL Medium Strength Cipher Suites Supported (SWEET32),The remote service supports the use of medium strength SSL ciphers.,"The remote host supports the use of SSL ciphers that offer medium
+strength encryption. Nessus regards medium strength as any encryption
+that uses key lengths at least 64 bits and less than 112 bits, or 
+else that uses the 3DES encryption suite.
+
+Note that it is considerably easier to circumvent medium strength
+encryption if the attacker is on the same physical network.","Reconfigure the affected application if possible to avoid use of
+medium strength ciphers.","https://www.openssl.org/blog/blog/2016/08/24/sweet32/
+https://sweet32.info","
+  Medium Strength Ciphers (> 64-bit and < 112-bit key, or 3DES)
+
+    EDH-RSA-DES-CBC3-SHA         Kx=DH          Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+    ADH-DES-CBC3-SHA             Kx=DH          Au=None     Enc=3DES-CBC(168)        Mac=SHA1   
+    ECDHE-RSA-DES-CBC3-SHA       Kx=ECDH        Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+    AECDH-DES-CBC3-SHA           Kx=ECDH        Au=None     Enc=3DES-CBC(168)        Mac=SHA1   
+    DES-CBC3-SHA                 Kx=RSA         Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+",075745ad-5b59-4c81-b233-4b55cbe59034,Active,107.112.170.196,,,Linux Kernel 4.4 on Ubuntu 16.04 (xenial),,General,5,,,AV:N/AC:L/Au:N/C:P/I:N/A:N,7.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+90317,,4.3,High,107.112.170.199,TCP,22,SSH Weak Algorithms Supported,"The remote SSH server is configured to allow weak encryption
+algorithms or no algorithm at all.","Nessus has detected that the remote SSH server is configured to use
+the Arcfour stream cipher or no cipher at all. RFC 4253 advises
+against using Arcfour due to an issue with weak keys.","Contact the vendor or consult product documentation to remove the weak
+ciphers.",https://tools.ietf.org/html/rfc4253#section-6.3,"
+The following weak server-to-client encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+
+The following weak client-to-server encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+",58fcd8c9-cea7-4241-ab59-eace00083209,Active,107.112.170.199,,,Linux Kernel 2.2,,Misc.,4.3,,,AV:N/AC:M/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+71049,,2.6,High,107.112.170.199,TCP,22,SSH Weak MAC Algorithms Enabled,"The remote SSH server is configured to allow MD5 and 96-bit MAC
+algorithms.","The remote SSH server is configured to allow either MD5 or 96-bit MAC
+algorithms, both of which are considered weak.
+
+Note that this plugin only checks for the options of the SSH server,
+and it does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable MD5 and
+96-bit MAC algorithms.",,"
+The following client-to-server Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+
+The following server-to-client Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+",58fcd8c9-cea7-4241-ab59-eace00083209,Active,107.112.170.199,,,Linux Kernel 2.2,,Misc.,2.6,,,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+90317,,4.3,High,107.112.170.200,TCP,22,SSH Weak Algorithms Supported,"The remote SSH server is configured to allow weak encryption
+algorithms or no algorithm at all.","Nessus has detected that the remote SSH server is configured to use
+the Arcfour stream cipher or no cipher at all. RFC 4253 advises
+against using Arcfour due to an issue with weak keys.","Contact the vendor or consult product documentation to remove the weak
+ciphers.",https://tools.ietf.org/html/rfc4253#section-6.3,"
+The following weak server-to-client encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+
+The following weak client-to-server encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+",2d3af43b-a845-4eff-905c-a5639fd16b86,Active,107.112.170.200,,,Linux Kernel 2.2,,Misc.,4.3,,,AV:N/AC:M/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+71049,,2.6,High,107.112.170.200,TCP,22,SSH Weak MAC Algorithms Enabled,"The remote SSH server is configured to allow MD5 and 96-bit MAC
+algorithms.","The remote SSH server is configured to allow either MD5 or 96-bit MAC
+algorithms, both of which are considered weak.
+
+Note that this plugin only checks for the options of the SSH server,
+and it does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable MD5 and
+96-bit MAC algorithms.",,"
+The following client-to-server Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+
+The following server-to-client Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+",2d3af43b-a845-4eff-905c-a5639fd16b86,Active,107.112.170.200,,,Linux Kernel 2.2,,Misc.,2.6,,,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+90317,,4.3,High,107.112.170.201,TCP,22,SSH Weak Algorithms Supported,"The remote SSH server is configured to allow weak encryption
+algorithms or no algorithm at all.","Nessus has detected that the remote SSH server is configured to use
+the Arcfour stream cipher or no cipher at all. RFC 4253 advises
+against using Arcfour due to an issue with weak keys.","Contact the vendor or consult product documentation to remove the weak
+ciphers.",https://tools.ietf.org/html/rfc4253#section-6.3,"
+The following weak server-to-client encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+
+The following weak client-to-server encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+",56e64d96-5835-4ce5-b3f9-3e8404d05063,Active,107.112.170.201,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,Misc.,4.3,,,AV:N/AC:M/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+71049,,2.6,High,107.112.170.201,TCP,22,SSH Weak MAC Algorithms Enabled,"The remote SSH server is configured to allow MD5 and 96-bit MAC
+algorithms.","The remote SSH server is configured to allow either MD5 or 96-bit MAC
+algorithms, both of which are considered weak.
+
+Note that this plugin only checks for the options of the SSH server,
+and it does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable MD5 and
+96-bit MAC algorithms.",,"
+The following client-to-server Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+
+The following server-to-client Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+",56e64d96-5835-4ce5-b3f9-3e8404d05063,Active,107.112.170.201,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,Misc.,2.6,,,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+15901,,5,High,107.112.170.201,TCP,443,SSL Certificate Expiry,The remote server's SSL certificate has already expired.,"This plugin checks expiry dates of certificates associated with SSL-
+enabled services on the target and reports whether any have already
+expired.","Purchase or generate a new SSL certificate to replace the existing
+one.",,"
+The SSL certificate has already expired :
+
+  Subject          : C=--, ST=SomeState, L=SomeCity, O=SomeOrganization, OU=SomeOrganizationalUnit, CN=attnxgsrv001m, emailAddress=root@attnxgsrv001m
+  Issuer           : C=--, ST=SomeState, L=SomeCity, O=SomeOrganization, OU=SomeOrganizationalUnit, CN=attnxgsrv001m, emailAddress=root@attnxgsrv001m
+  Not valid before : Oct 15 17:56:14 2015 GMT
+  Not valid after  : Oct 14 17:56:14 2016 GMT
+",56e64d96-5835-4ce5-b3f9-3e8404d05063,Active,107.112.170.201,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,General,5,,,AV:N/AC:L/Au:N/C:N/I:P/A:N,5.3,,,AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+57582,,6.4,High,107.112.170.201,TCP,443,SSL Self-Signed Certificate,"The SSL certificate chain for this service ends in an unrecognized
+self-signed certificate.","The X.509 certificate chain for this service is not signed by a
+recognized certificate authority.  If the remote host is a public host
+in production, this nullifies the use of SSL as anyone could establish
+a man-in-the-middle attack against the remote host. 
+
+Note that this plugin does not check for certificate chains that end
+in a certificate that is not self-signed, but is signed by an
+unrecognized certificate authority.",Purchase or generate a proper certificate for this service.,,"
+The following certificate was found at the top of the certificate
+chain sent by the remote host, but is self-signed and was not
+found in the list of known certificate authorities :
+
+|-Subject : C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=attnxgsrv001m/E=root@attnxgsrv001m
+",56e64d96-5835-4ce5-b3f9-3e8404d05063,Active,107.112.170.201,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,General,6.4,,,AV:N/AC:L/Au:N/C:P/I:P/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+104743,,0,High,107.112.170.201,TCP,443,TLS Version 1.0 Protocol Detection,The remote service encrypts traffic using an older version of TLS.,"The remote service accepts connections encrypted using TLS 1.0. TLS 1.0 has a
+number of cryptographic design flaws. Modern implementations of TLS 1.0
+mitigate these problems, but newer versions of TLS like 1.1 and 1.2 are
+designed against these flaws and should be used whenever possible.
+
+PCI DSS v3.2 requires that TLS 1.0 be disabled entirely by June 30,
+2018, except for POS POI terminals (and the SSL/TLS termination
+points to which they connect) that can be verified as not being
+susceptible to any known exploits.","Enable support for TLS 1.1 and 1.2, and disable support for TLS 1.0.",,TLSv1 is enabled and the server supports at least one cipher.,56e64d96-5835-4ce5-b3f9-3e8404d05063,Active,107.112.170.201,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,Service detection,,,,,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+42873,CVE-2016-2183,5,High,107.112.170.201,TCP,443,SSL Medium Strength Cipher Suites Supported (SWEET32),The remote service supports the use of medium strength SSL ciphers.,"The remote host supports the use of SSL ciphers that offer medium
+strength encryption. Nessus regards medium strength as any encryption
+that uses key lengths at least 64 bits and less than 112 bits, or 
+else that uses the 3DES encryption suite.
+
+Note that it is considerably easier to circumvent medium strength
+encryption if the attacker is on the same physical network.","Reconfigure the affected application if possible to avoid use of
+medium strength ciphers.","https://www.openssl.org/blog/blog/2016/08/24/sweet32/
+https://sweet32.info","
+  Medium Strength Ciphers (> 64-bit and < 112-bit key, or 3DES)
+
+    EDH-RSA-DES-CBC3-SHA         Kx=DH          Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+    ECDHE-RSA-DES-CBC3-SHA       Kx=ECDH        Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+",56e64d96-5835-4ce5-b3f9-3e8404d05063,Active,107.112.170.201,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,General,5,,,AV:N/AC:L/Au:N/C:P/I:N/A:N,7.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+90317,,4.3,High,107.112.170.202,TCP,22,SSH Weak Algorithms Supported,"The remote SSH server is configured to allow weak encryption
+algorithms or no algorithm at all.","Nessus has detected that the remote SSH server is configured to use
+the Arcfour stream cipher or no cipher at all. RFC 4253 advises
+against using Arcfour due to an issue with weak keys.","Contact the vendor or consult product documentation to remove the weak
+ciphers.",https://tools.ietf.org/html/rfc4253#section-6.3,"
+The following weak server-to-client encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+
+The following weak client-to-server encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+",dbdba6a1-c268-45f1-9368-6dea2baf4f70,Active,107.112.170.202,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,Misc.,4.3,,,AV:N/AC:M/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+71049,,2.6,High,107.112.170.202,TCP,22,SSH Weak MAC Algorithms Enabled,"The remote SSH server is configured to allow MD5 and 96-bit MAC
+algorithms.","The remote SSH server is configured to allow either MD5 or 96-bit MAC
+algorithms, both of which are considered weak.
+
+Note that this plugin only checks for the options of the SSH server,
+and it does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable MD5 and
+96-bit MAC algorithms.",,"
+The following client-to-server Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+
+The following server-to-client Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+",dbdba6a1-c268-45f1-9368-6dea2baf4f70,Active,107.112.170.202,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,Misc.,2.6,,,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+15901,,5,High,107.112.170.202,TCP,443,SSL Certificate Expiry,The remote server's SSL certificate has already expired.,"This plugin checks expiry dates of certificates associated with SSL-
+enabled services on the target and reports whether any have already
+expired.","Purchase or generate a new SSL certificate to replace the existing
+one.",,"
+The SSL certificate has already expired :
+
+  Subject          : C=--, ST=SomeState, L=SomeCity, O=SomeOrganization, OU=SomeOrganizationalUnit, CN=attnxgsrv001m, emailAddress=root@attnxgsrv001m
+  Issuer           : C=--, ST=SomeState, L=SomeCity, O=SomeOrganization, OU=SomeOrganizationalUnit, CN=attnxgsrv001m, emailAddress=root@attnxgsrv001m
+  Not valid before : Oct 15 17:56:14 2015 GMT
+  Not valid after  : Oct 14 17:56:14 2016 GMT
+",dbdba6a1-c268-45f1-9368-6dea2baf4f70,Active,107.112.170.202,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,General,5,,,AV:N/AC:L/Au:N/C:N/I:P/A:N,5.3,,,AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+57582,,6.4,High,107.112.170.202,TCP,465,SSL Self-Signed Certificate,"The SSL certificate chain for this service ends in an unrecognized
+self-signed certificate.","The X.509 certificate chain for this service is not signed by a
+recognized certificate authority.  If the remote host is a public host
+in production, this nullifies the use of SSL as anyone could establish
+a man-in-the-middle attack against the remote host. 
+
+Note that this plugin does not check for certificate chains that end
+in a certificate that is not self-signed, but is signed by an
+unrecognized certificate authority.",Purchase or generate a proper certificate for this service.,,"
+The following certificate was found at the top of the certificate
+chain sent by the remote host, but is self-signed and was not
+found in the list of known certificate authorities :
+
+|-Subject : C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=zrdm6bvota05ngm002/E=root@zrdm6bvota05ngm002
+",dbdba6a1-c268-45f1-9368-6dea2baf4f70,Active,107.112.170.202,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,General,6.4,,,AV:N/AC:L/Au:N/C:P/I:P/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+57582,,6.4,High,107.112.170.202,TCP,443,SSL Self-Signed Certificate,"The SSL certificate chain for this service ends in an unrecognized
+self-signed certificate.","The X.509 certificate chain for this service is not signed by a
+recognized certificate authority.  If the remote host is a public host
+in production, this nullifies the use of SSL as anyone could establish
+a man-in-the-middle attack against the remote host. 
+
+Note that this plugin does not check for certificate chains that end
+in a certificate that is not self-signed, but is signed by an
+unrecognized certificate authority.",Purchase or generate a proper certificate for this service.,,"
+The following certificate was found at the top of the certificate
+chain sent by the remote host, but is self-signed and was not
+found in the list of known certificate authorities :
+
+|-Subject : C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=attnxgsrv001m/E=root@attnxgsrv001m
+",dbdba6a1-c268-45f1-9368-6dea2baf4f70,Active,107.112.170.202,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,General,6.4,,,AV:N/AC:L/Au:N/C:P/I:P/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+65821,CVE-2013-2566,2.6,High,107.112.170.202,TCP,465,SSL RC4 Cipher Suites Supported (Bar Mitzvah),The remote service supports the use of the RC4 cipher.,"The remote host supports the use of RC4 in one or more cipher suites.
+The RC4 cipher is flawed in its generation of a pseudo-random stream
+of bytes so that a wide variety of small biases are introduced into
+the stream, decreasing its randomness.
+
+If plaintext is repeatedly encrypted (e.g., HTTP cookies), and an
+attacker is able to obtain many (i.e., tens of millions) ciphertexts,
+the attacker may be able to derive the plaintext.","Reconfigure the affected application, if possible, to avoid use of RC4
+ciphers. Consider using TLS 1.2 with AES-GCM suites subject to browser
+and web server support.","http://www.nessus.org/u?ac7327a0
+http://cr.yp.to/talks/2013.03.12/slides.pdf
+http://www.isg.rhul.ac.uk/tls/
+https://www.imperva.com/docs/HII_Attacking_SSL_when_using_RC4.pdf","
+List of RC4 cipher suites supported by the remote server :
+
+  High Strength Ciphers (>= 112-bit key)
+
+    ECDHE-RSA-RC4-SHA            Kx=ECDH        Au=RSA      Enc=RC4(128)             Mac=SHA1   
+    RC4-MD5                      Kx=RSA         Au=RSA      Enc=RC4(128)             Mac=MD5    
+    RC4-SHA                      Kx=RSA         Au=RSA      Enc=RC4(128)             Mac=SHA1   
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+",dbdba6a1-c268-45f1-9368-6dea2baf4f70,Active,107.112.170.202,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,General,2.6,2.2,E:U/RL:ND/RC:C,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+65821,CVE-2015-2808,2.6,High,107.112.170.202,TCP,465,SSL RC4 Cipher Suites Supported (Bar Mitzvah),The remote service supports the use of the RC4 cipher.,"The remote host supports the use of RC4 in one or more cipher suites.
+The RC4 cipher is flawed in its generation of a pseudo-random stream
+of bytes so that a wide variety of small biases are introduced into
+the stream, decreasing its randomness.
+
+If plaintext is repeatedly encrypted (e.g., HTTP cookies), and an
+attacker is able to obtain many (i.e., tens of millions) ciphertexts,
+the attacker may be able to derive the plaintext.","Reconfigure the affected application, if possible, to avoid use of RC4
+ciphers. Consider using TLS 1.2 with AES-GCM suites subject to browser
+and web server support.","http://www.nessus.org/u?ac7327a0
+http://cr.yp.to/talks/2013.03.12/slides.pdf
+http://www.isg.rhul.ac.uk/tls/
+https://www.imperva.com/docs/HII_Attacking_SSL_when_using_RC4.pdf","
+List of RC4 cipher suites supported by the remote server :
+
+  High Strength Ciphers (>= 112-bit key)
+
+    ECDHE-RSA-RC4-SHA            Kx=ECDH        Au=RSA      Enc=RC4(128)             Mac=SHA1   
+    RC4-MD5                      Kx=RSA         Au=RSA      Enc=RC4(128)             Mac=MD5    
+    RC4-SHA                      Kx=RSA         Au=RSA      Enc=RC4(128)             Mac=SHA1   
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+",dbdba6a1-c268-45f1-9368-6dea2baf4f70,Active,107.112.170.202,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,General,2.6,2.2,E:U/RL:ND/RC:C,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+20007,,7.1,High,107.112.170.202,TCP,465,SSL Version 2 and 3 Protocol Detection,"The remote service encrypts traffic using a protocol with known
+weaknesses.","The remote service accepts connections encrypted using SSL 2.0 and/or
+SSL 3.0. These versions of SSL are affected by several cryptographic
+flaws, including:
+
+  - An insecure padding scheme with CBC ciphers.
+
+  - Insecure session renegotiation and resumption schemes.
+
+An attacker can exploit these flaws to conduct man-in-the-middle
+attacks or to decrypt communications between the affected service and
+clients.
+
+Although SSL/TLS has a secure means for choosing the highest supported
+version of the protocol (so that these versions will be used only if
+the client or server support nothing better), many web browsers
+implement this in an unsafe way that allows an attacker to downgrade
+a connection (such as in POODLE). Therefore, it is recommended that
+these protocols be disabled entirely.
+
+NIST has determined that SSL 3.0 is no longer acceptable for secure
+communications. As of the date of enforcement found in PCI DSS v3.1,
+any version of SSL will not meet the PCI SSC's definition of 'strong
+cryptography'.","Consult the application's documentation to disable SSL 2.0 and 3.0.
+Use TLS 1.1 (with approved cipher suites) or higher instead.","https://www.schneier.com/academic/paperfiles/paper-ssl.pdf
+http://www.nessus.org/u?b06c7e95
+http://www.nessus.org/u?247c4540
+https://www.openssl.org/~bodo/ssl-poodle.pdf
+http://www.nessus.org/u?5d15ba70
+https://www.imperialviolet.org/2014/10/14/poodle.html
+https://tools.ietf.org/html/rfc7507
+https://tools.ietf.org/html/rfc7568","
+- SSLv3 is enabled and the server supports at least one cipher.
+	Explanation: TLS 1.0 and SSL 3.0 cipher suites may be used with SSLv3
+
+
+  Medium Strength Ciphers (> 64-bit and < 112-bit key, or 3DES)
+
+    EDH-RSA-DES-CBC3-SHA         Kx=DH          Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+    ECDHE-RSA-DES-CBC3-SHA       Kx=ECDH        Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+    DES-CBC3-SHA                 Kx=RSA         Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+
+  High Strength Ciphers (>= 112-bit key)
+
+    DHE-RSA-AES128-SHA           Kx=DH          Au=RSA      Enc=AES-CBC(128)         Mac=SHA1   
+    DHE-RSA-AES256-SHA           Kx=DH          Au=RSA      Enc=AES-CBC(256)         Mac=SHA1   
+    DHE-RSA-CAMELLIA128-SHA      Kx=DH          Au=RSA      Enc=Camellia-CBC(128)    Mac=SHA1   
+    DHE-RSA-CAMELLIA256-SHA      Kx=DH          Au=RSA      Enc=Camellia-CBC(256)    Mac=SHA1   
+    DHE-RSA-SEED-SHA             Kx=DH          Au=RSA      Enc=SEED-CBC(128)        Mac=SHA1   
+    ECDHE-RSA-AES128-SHA         Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA1   
+    ECDHE-RSA-AES256-SHA         Kx=ECDH        Au=RSA      Enc=AES-CBC(256)         Mac=SHA1   
+    ECDHE-RSA-RC4-SHA            Kx=ECDH        Au=RSA      Enc=RC4(128)             Mac=SHA1   
+    AES128-SHA                   Kx=RSA         Au=RSA      Enc=AES-CBC(128)         Mac=SHA1   
+    AES256-SHA                   Kx=RSA         Au=RSA      Enc=AES-CBC(256)         Mac=SHA1   
+    CAMELLIA128-SHA              Kx=RSA         Au=RSA      Enc=Camellia-CBC(128)    Mac=SHA1   
+    CAMELLIA256-SHA              Kx=RSA         Au=RSA      Enc=Camellia-CBC(256)    Mac=SHA1   
+    IDEA-CBC-SHA                 Kx=RSA         Au=RSA      Enc=IDEA-CBC(128)        Mac=SHA1   
+    RC4-MD5                      Kx=RSA         Au=RSA      Enc=RC4(128)             Mac=MD5    
+    RC4-SHA                      Kx=RSA         Au=RSA      Enc=RC4(128)             Mac=SHA1   
+    SEED-SHA                     Kx=RSA         Au=RSA      Enc=SEED-CBC(128)        Mac=SHA1   
+    DHE-RSA-AES128-SHA256        Kx=DH          Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
+    DHE-RSA-AES256-SHA256        Kx=DH          Au=RSA      Enc=AES-CBC(256)         Mac=SHA256  
+    ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
+    ECDHE-RSA-AES256-SHA384      Kx=ECDH        Au=RSA      Enc=AES-CBC(256)         Mac=SHA384  
+    RSA-AES128-SHA256            Kx=RSA         Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
+    RSA-AES256-SHA256            Kx=RSA         Au=RSA      Enc=AES-CBC(256)         Mac=SHA256  
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+",dbdba6a1-c268-45f1-9368-6dea2baf4f70,Active,107.112.170.202,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,Service detection,7.1,,,AV:N/AC:M/Au:N/C:C/I:N/A:N,7.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+104743,,0,High,107.112.170.202,TCP,465,TLS Version 1.0 Protocol Detection,The remote service encrypts traffic using an older version of TLS.,"The remote service accepts connections encrypted using TLS 1.0. TLS 1.0 has a
+number of cryptographic design flaws. Modern implementations of TLS 1.0
+mitigate these problems, but newer versions of TLS like 1.1 and 1.2 are
+designed against these flaws and should be used whenever possible.
+
+PCI DSS v3.2 requires that TLS 1.0 be disabled entirely by June 30,
+2018, except for POS POI terminals (and the SSL/TLS termination
+points to which they connect) that can be verified as not being
+susceptible to any known exploits.","Enable support for TLS 1.1 and 1.2, and disable support for TLS 1.0.",,TLSv1 is enabled and the server supports at least one cipher.,dbdba6a1-c268-45f1-9368-6dea2baf4f70,Active,107.112.170.202,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,Service detection,,,,,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+104743,,0,High,107.112.170.202,TCP,443,TLS Version 1.0 Protocol Detection,The remote service encrypts traffic using an older version of TLS.,"The remote service accepts connections encrypted using TLS 1.0. TLS 1.0 has a
+number of cryptographic design flaws. Modern implementations of TLS 1.0
+mitigate these problems, but newer versions of TLS like 1.1 and 1.2 are
+designed against these flaws and should be used whenever possible.
+
+PCI DSS v3.2 requires that TLS 1.0 be disabled entirely by June 30,
+2018, except for POS POI terminals (and the SSL/TLS termination
+points to which they connect) that can be verified as not being
+susceptible to any known exploits.","Enable support for TLS 1.1 and 1.2, and disable support for TLS 1.0.",,TLSv1 is enabled and the server supports at least one cipher.,dbdba6a1-c268-45f1-9368-6dea2baf4f70,Active,107.112.170.202,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,Service detection,,,,,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+42873,CVE-2016-2183,5,High,107.112.170.202,TCP,465,SSL Medium Strength Cipher Suites Supported (SWEET32),The remote service supports the use of medium strength SSL ciphers.,"The remote host supports the use of SSL ciphers that offer medium
+strength encryption. Nessus regards medium strength as any encryption
+that uses key lengths at least 64 bits and less than 112 bits, or 
+else that uses the 3DES encryption suite.
+
+Note that it is considerably easier to circumvent medium strength
+encryption if the attacker is on the same physical network.","Reconfigure the affected application if possible to avoid use of
+medium strength ciphers.","https://www.openssl.org/blog/blog/2016/08/24/sweet32/
+https://sweet32.info","
+  Medium Strength Ciphers (> 64-bit and < 112-bit key, or 3DES)
+
+    EDH-RSA-DES-CBC3-SHA         Kx=DH          Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+    ECDHE-RSA-DES-CBC3-SHA       Kx=ECDH        Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+    DES-CBC3-SHA                 Kx=RSA         Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+",dbdba6a1-c268-45f1-9368-6dea2baf4f70,Active,107.112.170.202,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,General,5,,,AV:N/AC:L/Au:N/C:P/I:N/A:N,7.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+42873,CVE-2016-2183,5,High,107.112.170.202,TCP,443,SSL Medium Strength Cipher Suites Supported (SWEET32),The remote service supports the use of medium strength SSL ciphers.,"The remote host supports the use of SSL ciphers that offer medium
+strength encryption. Nessus regards medium strength as any encryption
+that uses key lengths at least 64 bits and less than 112 bits, or 
+else that uses the 3DES encryption suite.
+
+Note that it is considerably easier to circumvent medium strength
+encryption if the attacker is on the same physical network.","Reconfigure the affected application if possible to avoid use of
+medium strength ciphers.","https://www.openssl.org/blog/blog/2016/08/24/sweet32/
+https://sweet32.info","
+  Medium Strength Ciphers (> 64-bit and < 112-bit key, or 3DES)
+
+    EDH-RSA-DES-CBC3-SHA         Kx=DH          Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+    ECDHE-RSA-DES-CBC3-SHA       Kx=ECDH        Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+",dbdba6a1-c268-45f1-9368-6dea2baf4f70,Active,107.112.170.202,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,General,5,,,AV:N/AC:L/Au:N/C:P/I:N/A:N,7.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+90317,,4.3,High,107.112.170.203,TCP,22,SSH Weak Algorithms Supported,"The remote SSH server is configured to allow weak encryption
+algorithms or no algorithm at all.","Nessus has detected that the remote SSH server is configured to use
+the Arcfour stream cipher or no cipher at all. RFC 4253 advises
+against using Arcfour due to an issue with weak keys.","Contact the vendor or consult product documentation to remove the weak
+ciphers.",https://tools.ietf.org/html/rfc4253#section-6.3,"
+The following weak server-to-client encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+
+The following weak client-to-server encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+",f0cc249a-a360-4258-8ae2-91c598ea93e1,Active,107.112.170.203,,,,,Misc.,4.3,,,AV:N/AC:M/Au:N/C:P/I:N/A:N,,,,,,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+71049,,2.6,High,107.112.170.203,TCP,22,SSH Weak MAC Algorithms Enabled,"The remote SSH server is configured to allow MD5 and 96-bit MAC
+algorithms.","The remote SSH server is configured to allow either MD5 or 96-bit MAC
+algorithms, both of which are considered weak.
+
+Note that this plugin only checks for the options of the SSH server,
+and it does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable MD5 and
+96-bit MAC algorithms.",,"
+The following client-to-server Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+
+The following server-to-client Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+",f0cc249a-a360-4258-8ae2-91c598ea93e1,Active,107.112.170.203,,,,,Misc.,2.6,,,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+57582,,6.4,High,107.112.170.203,TCP,2738,SSL Self-Signed Certificate,"The SSL certificate chain for this service ends in an unrecognized
+self-signed certificate.","The X.509 certificate chain for this service is not signed by a
+recognized certificate authority.  If the remote host is a public host
+in production, this nullifies the use of SSL as anyone could establish
+a man-in-the-middle attack against the remote host. 
+
+Note that this plugin does not check for certificate chains that end
+in a certificate that is not self-signed, but is signed by an
+unrecognized certificate authority.",Purchase or generate a proper certificate for this service.,,"
+The following certificate was found at the top of the certificate
+chain sent by the remote host, but is self-signed and was not
+found in the list of known certificate authorities :
+
+|-Subject : C=US/ST=California/O=Peregrine Systems, Inc./OU=Development
+",f0cc249a-a360-4258-8ae2-91c598ea93e1,Active,107.112.170.203,,,,,General,6.4,,,AV:N/AC:L/Au:N/C:P/I:P/A:N,,,,,,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+78479,CVE-2014-3566,4.3,High,107.112.170.203,TCP,2738,SSLv3 Padding Oracle On Downgraded Legacy Encryption Vulnerability (POODLE),"It is possible to obtain sensitive information from the remote host
+with SSL/TLS-enabled services.","The remote host is affected by a man-in-the-middle (MitM) information
+disclosure vulnerability known as POODLE. The vulnerability is due to
+the way SSL 3.0 handles padding bytes when decrypting messages
+encrypted using block ciphers in cipher block chaining (CBC) mode.
+MitM attackers can decrypt a selected byte of a cipher text in as few
+as 256 tries if they are able to force a victim application to
+repeatedly send the same data over newly created SSL 3.0 connections.
+
+As long as a client and service both support SSLv3, a connection can
+be 'rolled back' to SSLv3, even if TLSv1 or newer is supported by the
+client and service.
+
+The TLS Fallback SCSV mechanism prevents 'version rollback' attacks
+without impacting legacy clients; however, it can only protect
+connections when the client and service support the mechanism. Sites
+that cannot disable SSLv3 immediately should enable this mechanism.
+
+This is a vulnerability in the SSLv3 specification, not in any
+particular SSL implementation. Disabling SSLv3 is the only way to
+completely mitigate the vulnerability.","Disable SSLv3.
+
+Services that must support SSLv3 should enable the TLS Fallback SCSV
+mechanism until SSLv3 can be disabled.","https://www.imperialviolet.org/2014/10/14/poodle.html
+https://www.openssl.org/~bodo/ssl-poodle.pdf
+https://tools.ietf.org/html/draft-ietf-tls-downgrade-scsv-00","
+Nessus determined that the remote server supports SSLv3 with at least one CBC 
+cipher suite, indicating that this server is vulnerable.
+
+It appears that TLSv1 or newer is supported on the server. However, the 
+Fallback SCSV mechanism is not supported, allowing connections to be ""rolled 
+back"" to SSLv3.
+",f0cc249a-a360-4258-8ae2-91c598ea93e1,Active,107.112.170.203,,,,,General,4.3,3.2,E:U/RL:OF/RC:C,AV:N/AC:M/Au:N/C:P/I:N/A:N,,,,,,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+20007,,7.1,High,107.112.170.203,TCP,2738,SSL Version 2 and 3 Protocol Detection,"The remote service encrypts traffic using a protocol with known
+weaknesses.","The remote service accepts connections encrypted using SSL 2.0 and/or
+SSL 3.0. These versions of SSL are affected by several cryptographic
+flaws, including:
+
+  - An insecure padding scheme with CBC ciphers.
+
+  - Insecure session renegotiation and resumption schemes.
+
+An attacker can exploit these flaws to conduct man-in-the-middle
+attacks or to decrypt communications between the affected service and
+clients.
+
+Although SSL/TLS has a secure means for choosing the highest supported
+version of the protocol (so that these versions will be used only if
+the client or server support nothing better), many web browsers
+implement this in an unsafe way that allows an attacker to downgrade
+a connection (such as in POODLE). Therefore, it is recommended that
+these protocols be disabled entirely.
+
+NIST has determined that SSL 3.0 is no longer acceptable for secure
+communications. As of the date of enforcement found in PCI DSS v3.1,
+any version of SSL will not meet the PCI SSC's definition of 'strong
+cryptography'.","Consult the application's documentation to disable SSL 2.0 and 3.0.
+Use TLS 1.1 (with approved cipher suites) or higher instead.","https://www.schneier.com/academic/paperfiles/paper-ssl.pdf
+http://www.nessus.org/u?b06c7e95
+http://www.nessus.org/u?247c4540
+https://www.openssl.org/~bodo/ssl-poodle.pdf
+http://www.nessus.org/u?5d15ba70
+https://www.imperialviolet.org/2014/10/14/poodle.html
+https://tools.ietf.org/html/rfc7507
+https://tools.ietf.org/html/rfc7568","
+- SSLv3 is enabled and the server supports at least one cipher.
+	Explanation: TLS 1.0 and SSL 3.0 cipher suites may be used with SSLv3
+
+
+  Medium Strength Ciphers (> 64-bit and < 112-bit key, or 3DES)
+
+    DES-CBC3-SHA                 Kx=RSA         Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+
+  High Strength Ciphers (>= 112-bit key)
+
+    AES128-SHA                   Kx=RSA         Au=RSA      Enc=AES-CBC(128)         Mac=SHA1   
+    AES256-SHA                   Kx=RSA         Au=RSA      Enc=AES-CBC(256)         Mac=SHA1   
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+",f0cc249a-a360-4258-8ae2-91c598ea93e1,Active,107.112.170.203,,,,,Service detection,7.1,,,AV:N/AC:M/Au:N/C:C/I:N/A:N,7.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+104743,,0,High,107.112.170.203,TCP,2738,TLS Version 1.0 Protocol Detection,The remote service encrypts traffic using an older version of TLS.,"The remote service accepts connections encrypted using TLS 1.0. TLS 1.0 has a
+number of cryptographic design flaws. Modern implementations of TLS 1.0
+mitigate these problems, but newer versions of TLS like 1.1 and 1.2 are
+designed against these flaws and should be used whenever possible.
+
+PCI DSS v3.2 requires that TLS 1.0 be disabled entirely by June 30,
+2018, except for POS POI terminals (and the SSL/TLS termination
+points to which they connect) that can be verified as not being
+susceptible to any known exploits.","Enable support for TLS 1.1 and 1.2, and disable support for TLS 1.0.",,TLSv1 is enabled and the server supports at least one cipher.,f0cc249a-a360-4258-8ae2-91c598ea93e1,Active,107.112.170.203,,,,,Service detection,,,,,,,,,,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+42873,CVE-2016-2183,5,High,107.112.170.203,TCP,2738,SSL Medium Strength Cipher Suites Supported (SWEET32),The remote service supports the use of medium strength SSL ciphers.,"The remote host supports the use of SSL ciphers that offer medium
+strength encryption. Nessus regards medium strength as any encryption
+that uses key lengths at least 64 bits and less than 112 bits, or 
+else that uses the 3DES encryption suite.
+
+Note that it is considerably easier to circumvent medium strength
+encryption if the attacker is on the same physical network.","Reconfigure the affected application if possible to avoid use of
+medium strength ciphers.","https://www.openssl.org/blog/blog/2016/08/24/sweet32/
+https://sweet32.info","
+  Medium Strength Ciphers (> 64-bit and < 112-bit key, or 3DES)
+
+    DES-CBC3-SHA                 Kx=RSA         Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+",f0cc249a-a360-4258-8ae2-91c598ea93e1,Active,107.112.170.203,,,,,General,5,,,AV:N/AC:L/Au:N/C:P/I:N/A:N,7.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+90317,,4.3,High,107.112.170.206,TCP,22,SSH Weak Algorithms Supported,"The remote SSH server is configured to allow weak encryption
+algorithms or no algorithm at all.","Nessus has detected that the remote SSH server is configured to use
+the Arcfour stream cipher or no cipher at all. RFC 4253 advises
+against using Arcfour due to an issue with weak keys.","Contact the vendor or consult product documentation to remove the weak
+ciphers.",https://tools.ietf.org/html/rfc4253#section-6.3,"
+The following weak server-to-client encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+
+The following weak client-to-server encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+",ca357687-f4b8-47b8-bfd0-58f8ee514f45,Active,107.112.170.206,,,Linux Kernel 2.2,,Misc.,4.3,,,AV:N/AC:M/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+71049,,2.6,High,107.112.170.206,TCP,22,SSH Weak MAC Algorithms Enabled,"The remote SSH server is configured to allow MD5 and 96-bit MAC
+algorithms.","The remote SSH server is configured to allow either MD5 or 96-bit MAC
+algorithms, both of which are considered weak.
+
+Note that this plugin only checks for the options of the SSH server,
+and it does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable MD5 and
+96-bit MAC algorithms.",,"
+The following client-to-server Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+
+The following server-to-client Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+",ca357687-f4b8-47b8-bfd0-58f8ee514f45,Active,107.112.170.206,,,Linux Kernel 2.2,,Misc.,2.6,,,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+90317,,4.3,High,107.112.170.207,TCP,22,SSH Weak Algorithms Supported,"The remote SSH server is configured to allow weak encryption
+algorithms or no algorithm at all.","Nessus has detected that the remote SSH server is configured to use
+the Arcfour stream cipher or no cipher at all. RFC 4253 advises
+against using Arcfour due to an issue with weak keys.","Contact the vendor or consult product documentation to remove the weak
+ciphers.",https://tools.ietf.org/html/rfc4253#section-6.3,"
+The following weak server-to-client encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+
+The following weak client-to-server encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+",1fabab2b-34fa-41b8-a730-797fb9c1a67a,Active,107.112.170.207,,,Linux Kernel 2.2,,Misc.,4.3,,,AV:N/AC:M/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+71049,,2.6,High,107.112.170.207,TCP,22,SSH Weak MAC Algorithms Enabled,"The remote SSH server is configured to allow MD5 and 96-bit MAC
+algorithms.","The remote SSH server is configured to allow either MD5 or 96-bit MAC
+algorithms, both of which are considered weak.
+
+Note that this plugin only checks for the options of the SSH server,
+and it does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable MD5 and
+96-bit MAC algorithms.",,"
+The following client-to-server Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+
+The following server-to-client Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+",1fabab2b-34fa-41b8-a730-797fb9c1a67a,Active,107.112.170.207,,,Linux Kernel 2.2,,Misc.,2.6,,,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+90317,,4.3,High,107.112.171.44,TCP,22,SSH Weak Algorithms Supported,"The remote SSH server is configured to allow weak encryption
+algorithms or no algorithm at all.","Nessus has detected that the remote SSH server is configured to use
+the Arcfour stream cipher or no cipher at all. RFC 4253 advises
+against using Arcfour due to an issue with weak keys.","Contact the vendor or consult product documentation to remove the weak
+ciphers.",https://tools.ietf.org/html/rfc4253#section-6.3,"
+The following weak server-to-client encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+
+The following weak client-to-server encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+",d0172b78-abc6-416b-8cc5-7f3f1ad14a37,Active,107.112.171.44,,,FortiOS on Fortinet FortiGate,,Misc.,4.3,,,AV:N/AC:M/Au:N/C:P/I:N/A:N,,,,,firewall,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+71049,,2.6,High,107.112.171.44,TCP,22,SSH Weak MAC Algorithms Enabled,"The remote SSH server is configured to allow MD5 and 96-bit MAC
+algorithms.","The remote SSH server is configured to allow either MD5 or 96-bit MAC
+algorithms, both of which are considered weak.
+
+Note that this plugin only checks for the options of the SSH server,
+and it does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable MD5 and
+96-bit MAC algorithms.",,"
+The following client-to-server Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+
+The following server-to-client Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+",d0172b78-abc6-416b-8cc5-7f3f1ad14a37,Active,107.112.171.44,,,FortiOS on Fortinet FortiGate,,Misc.,2.6,,,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,firewall,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+104743,,0,High,107.112.171.44,TCP,8443,TLS Version 1.0 Protocol Detection,The remote service encrypts traffic using an older version of TLS.,"The remote service accepts connections encrypted using TLS 1.0. TLS 1.0 has a
+number of cryptographic design flaws. Modern implementations of TLS 1.0
+mitigate these problems, but newer versions of TLS like 1.1 and 1.2 are
+designed against these flaws and should be used whenever possible.
+
+PCI DSS v3.2 requires that TLS 1.0 be disabled entirely by June 30,
+2018, except for POS POI terminals (and the SSL/TLS termination
+points to which they connect) that can be verified as not being
+susceptible to any known exploits.","Enable support for TLS 1.1 and 1.2, and disable support for TLS 1.0.",,TLSv1 is enabled and the server supports at least one cipher.,d0172b78-abc6-416b-8cc5-7f3f1ad14a37,Active,107.112.171.44,,,FortiOS on Fortinet FortiGate,,Service detection,,,,,,,,,firewall,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+42873,CVE-2016-2183,5,High,107.112.171.44,TCP,8443,SSL Medium Strength Cipher Suites Supported (SWEET32),The remote service supports the use of medium strength SSL ciphers.,"The remote host supports the use of SSL ciphers that offer medium
+strength encryption. Nessus regards medium strength as any encryption
+that uses key lengths at least 64 bits and less than 112 bits, or 
+else that uses the 3DES encryption suite.
+
+Note that it is considerably easier to circumvent medium strength
+encryption if the attacker is on the same physical network.","Reconfigure the affected application if possible to avoid use of
+medium strength ciphers.","https://www.openssl.org/blog/blog/2016/08/24/sweet32/
+https://sweet32.info","
+  Medium Strength Ciphers (> 64-bit and < 112-bit key, or 3DES)
+
+    PSK-3DES-EDE-CBC-SHA         Kx=PSK         Au=PSK      Enc=3DES-CBC(168)        Mac=SHA1   
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+",d0172b78-abc6-416b-8cc5-7f3f1ad14a37,Active,107.112.171.44,,,FortiOS on Fortinet FortiGate,,General,5,,,AV:N/AC:L/Au:N/C:P/I:N/A:N,7.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,firewall,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+90317,,4.3,High,107.112.171.45,TCP,22,SSH Weak Algorithms Supported,"The remote SSH server is configured to allow weak encryption
+algorithms or no algorithm at all.","Nessus has detected that the remote SSH server is configured to use
+the Arcfour stream cipher or no cipher at all. RFC 4253 advises
+against using Arcfour due to an issue with weak keys.","Contact the vendor or consult product documentation to remove the weak
+ciphers.",https://tools.ietf.org/html/rfc4253#section-6.3,"
+The following weak server-to-client encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+
+The following weak client-to-server encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+",a046a5f9-4b50-4a1c-87e5-45349a0c1d7b,Active,107.112.171.45,,,Linux Kernel 2.2,,Misc.,4.3,,,AV:N/AC:M/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+71049,,2.6,High,107.112.171.45,TCP,22,SSH Weak MAC Algorithms Enabled,"The remote SSH server is configured to allow MD5 and 96-bit MAC
+algorithms.","The remote SSH server is configured to allow either MD5 or 96-bit MAC
+algorithms, both of which are considered weak.
+
+Note that this plugin only checks for the options of the SSH server,
+and it does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable MD5 and
+96-bit MAC algorithms.",,"
+The following client-to-server Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+
+The following server-to-client Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+",a046a5f9-4b50-4a1c-87e5-45349a0c1d7b,Active,107.112.171.45,,,Linux Kernel 2.2,,Misc.,2.6,,,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+90317,,4.3,High,107.112.171.47,TCP,22,SSH Weak Algorithms Supported,"The remote SSH server is configured to allow weak encryption
+algorithms or no algorithm at all.","Nessus has detected that the remote SSH server is configured to use
+the Arcfour stream cipher or no cipher at all. RFC 4253 advises
+against using Arcfour due to an issue with weak keys.","Contact the vendor or consult product documentation to remove the weak
+ciphers.",https://tools.ietf.org/html/rfc4253#section-6.3,"
+The following weak server-to-client encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+
+The following weak client-to-server encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+",3f0e074b-eec8-48c2-94b0-29127a7694d0,Active,107.112.171.47,,,Linux Kernel 2.2,,Misc.,4.3,,,AV:N/AC:M/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+71049,,2.6,High,107.112.171.47,TCP,22,SSH Weak MAC Algorithms Enabled,"The remote SSH server is configured to allow MD5 and 96-bit MAC
+algorithms.","The remote SSH server is configured to allow either MD5 or 96-bit MAC
+algorithms, both of which are considered weak.
+
+Note that this plugin only checks for the options of the SSH server,
+and it does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable MD5 and
+96-bit MAC algorithms.",,"
+The following client-to-server Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+
+The following server-to-client Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+",3f0e074b-eec8-48c2-94b0-29127a7694d0,Active,107.112.171.47,,,Linux Kernel 2.2,,Misc.,2.6,,,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+104743,,0,High,107.112.171.47,TCP,9443,TLS Version 1.0 Protocol Detection,The remote service encrypts traffic using an older version of TLS.,"The remote service accepts connections encrypted using TLS 1.0. TLS 1.0 has a
+number of cryptographic design flaws. Modern implementations of TLS 1.0
+mitigate these problems, but newer versions of TLS like 1.1 and 1.2 are
+designed against these flaws and should be used whenever possible.
+
+PCI DSS v3.2 requires that TLS 1.0 be disabled entirely by June 30,
+2018, except for POS POI terminals (and the SSL/TLS termination
+points to which they connect) that can be verified as not being
+susceptible to any known exploits.","Enable support for TLS 1.1 and 1.2, and disable support for TLS 1.0.",,TLSv1 is enabled and the server supports at least one cipher.,3f0e074b-eec8-48c2-94b0-29127a7694d0,Active,107.112.171.47,,,Linux Kernel 2.2,,Service detection,,,,,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+42873,CVE-2016-2183,5,High,107.112.171.47,TCP,9443,SSL Medium Strength Cipher Suites Supported (SWEET32),The remote service supports the use of medium strength SSL ciphers.,"The remote host supports the use of SSL ciphers that offer medium
+strength encryption. Nessus regards medium strength as any encryption
+that uses key lengths at least 64 bits and less than 112 bits, or 
+else that uses the 3DES encryption suite.
+
+Note that it is considerably easier to circumvent medium strength
+encryption if the attacker is on the same physical network.","Reconfigure the affected application if possible to avoid use of
+medium strength ciphers.","https://www.openssl.org/blog/blog/2016/08/24/sweet32/
+https://sweet32.info","
+  Medium Strength Ciphers (> 64-bit and < 112-bit key, or 3DES)
+
+    PSK-3DES-EDE-CBC-SHA         Kx=PSK         Au=PSK      Enc=3DES-CBC(168)        Mac=SHA1   
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+",3f0e074b-eec8-48c2-94b0-29127a7694d0,Active,107.112.171.47,,,Linux Kernel 2.2,,General,5,,,AV:N/AC:L/Au:N/C:P/I:N/A:N,7.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+90317,,4.3,High,107.112.171.48,TCP,22,SSH Weak Algorithms Supported,"The remote SSH server is configured to allow weak encryption
+algorithms or no algorithm at all.","Nessus has detected that the remote SSH server is configured to use
+the Arcfour stream cipher or no cipher at all. RFC 4253 advises
+against using Arcfour due to an issue with weak keys.","Contact the vendor or consult product documentation to remove the weak
+ciphers.",https://tools.ietf.org/html/rfc4253#section-6.3,"
+The following weak server-to-client encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+
+The following weak client-to-server encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+",728c5d5b-1dc2-4bbb-9969-94f9fb844b5c,Active,107.112.171.48,,,Linux Kernel 2.2,,Misc.,4.3,,,AV:N/AC:M/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+71049,,2.6,High,107.112.171.48,TCP,22,SSH Weak MAC Algorithms Enabled,"The remote SSH server is configured to allow MD5 and 96-bit MAC
+algorithms.","The remote SSH server is configured to allow either MD5 or 96-bit MAC
+algorithms, both of which are considered weak.
+
+Note that this plugin only checks for the options of the SSH server,
+and it does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable MD5 and
+96-bit MAC algorithms.",,"
+The following client-to-server Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+
+The following server-to-client Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+",728c5d5b-1dc2-4bbb-9969-94f9fb844b5c,Active,107.112.171.48,,,Linux Kernel 2.2,,Misc.,2.6,,,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+90317,,4.3,High,107.112.171.49,TCP,22,SSH Weak Algorithms Supported,"The remote SSH server is configured to allow weak encryption
+algorithms or no algorithm at all.","Nessus has detected that the remote SSH server is configured to use
+the Arcfour stream cipher or no cipher at all. RFC 4253 advises
+against using Arcfour due to an issue with weak keys.","Contact the vendor or consult product documentation to remove the weak
+ciphers.",https://tools.ietf.org/html/rfc4253#section-6.3,"
+The following weak server-to-client encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+
+The following weak client-to-server encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+",a3ebbd49-8464-4ef1-989c-d9c73625c1db,Active,107.112.171.49,,,FortiOS on Fortinet FortiGate,,Misc.,4.3,,,AV:N/AC:M/Au:N/C:P/I:N/A:N,,,,,firewall,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+71049,,2.6,High,107.112.171.49,TCP,22,SSH Weak MAC Algorithms Enabled,"The remote SSH server is configured to allow MD5 and 96-bit MAC
+algorithms.","The remote SSH server is configured to allow either MD5 or 96-bit MAC
+algorithms, both of which are considered weak.
+
+Note that this plugin only checks for the options of the SSH server,
+and it does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable MD5 and
+96-bit MAC algorithms.",,"
+The following client-to-server Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+
+The following server-to-client Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+",a3ebbd49-8464-4ef1-989c-d9c73625c1db,Active,107.112.171.49,,,FortiOS on Fortinet FortiGate,,Misc.,2.6,,,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,firewall,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+90317,,4.3,High,107.112.171.50,TCP,22,SSH Weak Algorithms Supported,"The remote SSH server is configured to allow weak encryption
+algorithms or no algorithm at all.","Nessus has detected that the remote SSH server is configured to use
+the Arcfour stream cipher or no cipher at all. RFC 4253 advises
+against using Arcfour due to an issue with weak keys.","Contact the vendor or consult product documentation to remove the weak
+ciphers.",https://tools.ietf.org/html/rfc4253#section-6.3,"
+The following weak server-to-client encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+
+The following weak client-to-server encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+",561eb6fe-9036-4fd2-8cc0-9af286b4c78c,Active,107.112.171.50,,,,,Misc.,4.3,,,AV:N/AC:M/Au:N/C:P/I:N/A:N,,,,,,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+71049,,2.6,High,107.112.171.50,TCP,22,SSH Weak MAC Algorithms Enabled,"The remote SSH server is configured to allow MD5 and 96-bit MAC
+algorithms.","The remote SSH server is configured to allow either MD5 or 96-bit MAC
+algorithms, both of which are considered weak.
+
+Note that this plugin only checks for the options of the SSH server,
+and it does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable MD5 and
+96-bit MAC algorithms.",,"
+The following client-to-server Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+
+The following server-to-client Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+",561eb6fe-9036-4fd2-8cc0-9af286b4c78c,Active,107.112.171.50,,,,,Misc.,2.6,,,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+90317,,4.3,High,107.112.171.52,TCP,22,SSH Weak Algorithms Supported,"The remote SSH server is configured to allow weak encryption
+algorithms or no algorithm at all.","Nessus has detected that the remote SSH server is configured to use
+the Arcfour stream cipher or no cipher at all. RFC 4253 advises
+against using Arcfour due to an issue with weak keys.","Contact the vendor or consult product documentation to remove the weak
+ciphers.",https://tools.ietf.org/html/rfc4253#section-6.3,"
+The following weak server-to-client encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+
+The following weak client-to-server encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+",d8aeced9-1e7c-43b4-9c51-14f57ab59898,Active,107.112.171.52,,,FortiOS on Fortinet FortiGate,,Misc.,4.3,,,AV:N/AC:M/Au:N/C:P/I:N/A:N,,,,,firewall,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+71049,,2.6,High,107.112.171.52,TCP,22,SSH Weak MAC Algorithms Enabled,"The remote SSH server is configured to allow MD5 and 96-bit MAC
+algorithms.","The remote SSH server is configured to allow either MD5 or 96-bit MAC
+algorithms, both of which are considered weak.
+
+Note that this plugin only checks for the options of the SSH server,
+and it does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable MD5 and
+96-bit MAC algorithms.",,"
+The following client-to-server Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+
+The following server-to-client Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+",d8aeced9-1e7c-43b4-9c51-14f57ab59898,Active,107.112.171.52,,,FortiOS on Fortinet FortiGate,,Misc.,2.6,,,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,firewall,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+90317,,4.3,High,107.112.171.55,TCP,22,SSH Weak Algorithms Supported,"The remote SSH server is configured to allow weak encryption
+algorithms or no algorithm at all.","Nessus has detected that the remote SSH server is configured to use
+the Arcfour stream cipher or no cipher at all. RFC 4253 advises
+against using Arcfour due to an issue with weak keys.","Contact the vendor or consult product documentation to remove the weak
+ciphers.",https://tools.ietf.org/html/rfc4253#section-6.3,"
+The following weak server-to-client encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+
+The following weak client-to-server encryption algorithms are supported : 
+
+  arcfour
+  arcfour128
+  arcfour256
+",b95e7b1e-b2cf-4339-a1c6-2537dc7562e5,Active,107.112.171.55,,,Linux Kernel 2.2,,Misc.,4.3,,,AV:N/AC:M/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+71049,,2.6,High,107.112.171.55,TCP,22,SSH Weak MAC Algorithms Enabled,"The remote SSH server is configured to allow MD5 and 96-bit MAC
+algorithms.","The remote SSH server is configured to allow either MD5 or 96-bit MAC
+algorithms, both of which are considered weak.
+
+Note that this plugin only checks for the options of the SSH server,
+and it does not check for vulnerable software versions.","Contact the vendor or consult product documentation to disable MD5 and
+96-bit MAC algorithms.",,"
+The following client-to-server Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+
+The following server-to-client Message Authentication Code (MAC) algorithms
+are supported : 
+
+  hmac-md5
+  hmac-md5-96
+  hmac-sha1-96
+",b95e7b1e-b2cf-4339-a1c6-2537dc7562e5,Active,107.112.171.55,,,Linux Kernel 2.2,,Misc.,2.6,,,AV:N/AC:H/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+12218,,5,Medium,107.112.170.197,UDP,5353,mDNS Detection (Remote Network),It is possible to obtain information about the remote host.,"The remote service understands the Bonjour (also known as ZeroConf or
+mDNS) protocol, which allows anyone to uncover information from the
+remote host such as its operating system type and exact version, its
+hostname, and the list of services it is running. 
+
+This plugin attempts to discover mDNS used by hosts that are not on the
+network segment on which Nessus resides.","Filter incoming traffic to UDP port 5353, if desired.",,"Nessus was able to extract the following information :
+
+  - mDNS hostname       : zrdm6bvota05oam002.local.
+
+  - Advertised services :
+    o Service name      : Squid deb proxy on zrdm6bvota05oam002._apt_proxy._tcp.local.
+      Port number       : 8000
+
+",a2b1f65f-a694-4faf-bccb-1e09bc5b7cae,Active,107.112.170.197,,,Linux Kernel 4.4 on Ubuntu 16.04 (xenial),,Service detection,5,,,AV:N/AC:L/Au:N/C:P/I:N/A:N,,,,,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:07:29.579Z
+11040,CVE-2007-3008,5.8,Medium,107.112.170.197,TCP,8000,HTTP Reverse Proxy Detection,A transparent or reverse HTTP proxy is running on this port.,This web server is reachable through a reverse HTTP proxy.,Disable the HTTP reverse proxy.,,"The GET method revealed those proxies on the way to this web server :
+HTTP/1.1     squid-deb-proxy (squid/3.5.12)
+",a2b1f65f-a694-4faf-bccb-1e09bc5b7cae,Active,107.112.170.197,,,Linux Kernel 4.4 on Ubuntu 16.04 (xenial),,Web Servers,5.8,,,AV:N/AC:M/Au:N/C:P/I:P/A:N,5.4,,,AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:07:29.579Z
+11040,CVE-2005-3498,5.8,Medium,107.112.170.197,TCP,8000,HTTP Reverse Proxy Detection,A transparent or reverse HTTP proxy is running on this port.,This web server is reachable through a reverse HTTP proxy.,Disable the HTTP reverse proxy.,,"The GET method revealed those proxies on the way to this web server :
+HTTP/1.1     squid-deb-proxy (squid/3.5.12)
+",a2b1f65f-a694-4faf-bccb-1e09bc5b7cae,Active,107.112.170.197,,,Linux Kernel 4.4 on Ubuntu 16.04 (xenial),,Web Servers,5.8,,,AV:N/AC:M/Au:N/C:P/I:P/A:N,5.4,,,AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:07:29.579Z
+11040,CVE-2005-3398,5.8,Medium,107.112.170.197,TCP,8000,HTTP Reverse Proxy Detection,A transparent or reverse HTTP proxy is running on this port.,This web server is reachable through a reverse HTTP proxy.,Disable the HTTP reverse proxy.,,"The GET method revealed those proxies on the way to this web server :
+HTTP/1.1     squid-deb-proxy (squid/3.5.12)
+",a2b1f65f-a694-4faf-bccb-1e09bc5b7cae,Active,107.112.170.197,,,Linux Kernel 4.4 on Ubuntu 16.04 (xenial),,Web Servers,5.8,,,AV:N/AC:M/Au:N/C:P/I:P/A:N,5.4,,,AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:07:29.579Z
+11040,CVE-2004-2320,5.8,Medium,107.112.170.197,TCP,8000,HTTP Reverse Proxy Detection,A transparent or reverse HTTP proxy is running on this port.,This web server is reachable through a reverse HTTP proxy.,Disable the HTTP reverse proxy.,,"The GET method revealed those proxies on the way to this web server :
+HTTP/1.1     squid-deb-proxy (squid/3.5.12)
+",a2b1f65f-a694-4faf-bccb-1e09bc5b7cae,Active,107.112.170.197,,,Linux Kernel 4.4 on Ubuntu 16.04 (xenial),,Web Servers,5.8,,,AV:N/AC:M/Au:N/C:P/I:P/A:N,5.4,,,AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:07:29.579Z
+51192,,6.4,Medium,107.112.170.197,TCP,25,SSL Certificate Cannot Be Trusted,The SSL certificate for this service cannot be trusted.,"The server's X.509 certificate cannot be trusted. This situation can
+occur in three different ways, in which the chain of trust can be
+broken, as stated below :
+
+  - First, the top of the certificate chain sent by the
+    server might not be descended from a known public
+    certificate authority. This can occur either when the
+    top of the chain is an unrecognized, self-signed
+    certificate, or when intermediate certificates are
+    missing that would connect the top of the certificate
+    chain to a known public certificate authority.
+
+  - Second, the certificate chain may contain a certificate
+    that is not valid at the time of the scan. This can
+    occur either when the scan occurs before one of the
+    certificate's 'notBefore' dates, or after one of the
+    certificate's 'notAfter' dates.
+
+  - Third, the certificate chain may contain a signature
+    that either didn't match the certificate's information
+    or could not be verified. Bad signatures can be fixed by
+    getting the certificate with the bad signature to be
+    re-signed by its issuer. Signatures that could not be
+    verified are the result of the certificate's issuer
+    using a signing algorithm that Nessus either does not
+    support or does not recognize.
+
+If the remote host is a public host in production, any break in the
+chain makes it more difficult for users to verify the authenticity and 
+identity of the web server. This could make it easier to carry out 
+man-in-the-middle attacks against the remote host.",Purchase or generate a proper certificate for this service.,"https://www.itu.int/rec/T-REC-X.509/en
+https://en.wikipedia.org/wiki/X.509","
+The following certificate was at the top of the certificate
+chain sent by the remote host, but it is signed by an unknown
+certificate authority :
+
+|-Subject : CN=ds130-4-245-24.gs.sbc.com
+|-Issuer  : CN=ds130-4-245-24.gs.sbc.com
+",a2b1f65f-a694-4faf-bccb-1e09bc5b7cae,Active,107.112.170.197,,,Linux Kernel 4.4 on Ubuntu 16.04 (xenial),,General,6.4,,,AV:N/AC:L/Au:N/C:P/I:P/A:N,6.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:07:29.579Z
+51192,,6.4,Medium,107.112.171.46,TCP,443,SSL Certificate Cannot Be Trusted,The SSL certificate for this service cannot be trusted.,"The server's X.509 certificate cannot be trusted. This situation can
+occur in three different ways, in which the chain of trust can be
+broken, as stated below :
+
+  - First, the top of the certificate chain sent by the
+    server might not be descended from a known public
+    certificate authority. This can occur either when the
+    top of the chain is an unrecognized, self-signed
+    certificate, or when intermediate certificates are
+    missing that would connect the top of the certificate
+    chain to a known public certificate authority.
+
+  - Second, the certificate chain may contain a certificate
+    that is not valid at the time of the scan. This can
+    occur either when the scan occurs before one of the
+    certificate's 'notBefore' dates, or after one of the
+    certificate's 'notAfter' dates.
+
+  - Third, the certificate chain may contain a signature
+    that either didn't match the certificate's information
+    or could not be verified. Bad signatures can be fixed by
+    getting the certificate with the bad signature to be
+    re-signed by its issuer. Signatures that could not be
+    verified are the result of the certificate's issuer
+    using a signing algorithm that Nessus either does not
+    support or does not recognize.
+
+If the remote host is a public host in production, any break in the
+chain makes it more difficult for users to verify the authenticity and 
+identity of the web server. This could make it easier to carry out 
+man-in-the-middle attacks against the remote host.",Purchase or generate a proper certificate for this service.,"https://www.itu.int/rec/T-REC-X.509/en
+https://en.wikipedia.org/wiki/X.509","
+The following certificate was at the top of the certificate
+chain sent by the remote host, but it is signed by an unknown
+certificate authority :
+
+|-Subject : L=Austin/ST=Texas/C=US/O=Gemalto/OU=GGS/CN=*.eng.mobilephone.net
+|-Issuer  : C=US/O=Gemalto/OU=GGS/CN=ATT Certificate Authority
+",a153237b-b2a1-4597-91e9-598f2abed8d5,Active,107.112.171.46,,,Linux Kernel 2.2,,General,6.4,,,AV:N/AC:L/Au:N/C:P/I:P/A:N,6.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:07:29.579Z
+51192,,6.4,Medium,107.112.170.196,TCP,25,SSL Certificate Cannot Be Trusted,The SSL certificate for this service cannot be trusted.,"The server's X.509 certificate cannot be trusted. This situation can
+occur in three different ways, in which the chain of trust can be
+broken, as stated below :
+
+  - First, the top of the certificate chain sent by the
+    server might not be descended from a known public
+    certificate authority. This can occur either when the
+    top of the chain is an unrecognized, self-signed
+    certificate, or when intermediate certificates are
+    missing that would connect the top of the certificate
+    chain to a known public certificate authority.
+
+  - Second, the certificate chain may contain a certificate
+    that is not valid at the time of the scan. This can
+    occur either when the scan occurs before one of the
+    certificate's 'notBefore' dates, or after one of the
+    certificate's 'notAfter' dates.
+
+  - Third, the certificate chain may contain a signature
+    that either didn't match the certificate's information
+    or could not be verified. Bad signatures can be fixed by
+    getting the certificate with the bad signature to be
+    re-signed by its issuer. Signatures that could not be
+    verified are the result of the certificate's issuer
+    using a signing algorithm that Nessus either does not
+    support or does not recognize.
+
+If the remote host is a public host in production, any break in the
+chain makes it more difficult for users to verify the authenticity and 
+identity of the web server. This could make it easier to carry out 
+man-in-the-middle attacks against the remote host.",Purchase or generate a proper certificate for this service.,"https://www.itu.int/rec/T-REC-X.509/en
+https://en.wikipedia.org/wiki/X.509","
+The following certificate was at the top of the certificate
+chain sent by the remote host, but it is signed by an unknown
+certificate authority :
+
+|-Subject : CN=ds130-4-245-24.gs.sbc.com
+|-Issuer  : CN=ds130-4-245-24.gs.sbc.com
+",075745ad-5b59-4c81-b233-4b55cbe59034,Active,107.112.170.196,,,Linux Kernel 4.4 on Ubuntu 16.04 (xenial),,General,6.4,,,AV:N/AC:L/Au:N/C:P/I:P/A:N,6.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+12085,,5,Medium,107.112.170.199,TCP,8090,Apache Tomcat Default Files,The remote web server contains default files.,"The default error page, default index page, example JSPs and/or example servlets are installed on the remote Apache
+Tomcat server. These files should be removed as they may help an attacker uncover information about the remote Tomcat
+install or host itself.","Delete the default index page and remove the example JSP and servlets. Follow the Tomcat or OWASP instructions to 
+replace or modify the default error page.","https://wiki.apache.org/tomcat/FAQ/Miscellaneous#Q6
+https://www.owasp.org/index.php/Securing_tomcat","
+The following default files were found :
+
+/docs/
+/examples/servlets/index.html
+/examples/jsp/index.html
+
+The server is not configured to return a custom page in the event of a client requesting a non-existent resource.
+This may result in a potential disclosure of sensitive information about the server to attackers.
+",58fcd8c9-cea7-4241-ab59-eace00083209,Active,107.112.170.199,,,Linux Kernel 2.2,,Web Servers,5,,,AV:N/AC:L/Au:N/C:P/I:N/A:N,5.3,,,AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+11213,CVE-2010-0386,5,Medium,107.112.170.201,TCP,443,HTTP TRACE / TRACK Methods Allowed,Debugging functions are enabled on the remote web server.,"The remote web server supports the TRACE and/or TRACK methods. TRACE
+and TRACK are HTTP methods that are used to debug web server
+connections.",Disable these methods. Refer to the plugin output for more information.,"https://www.cgisecurity.com/whitehat-mirror/WH-WhitePaper_XST_ebook.pdf
+http://www.apacheweek.com/issues/03-01-24
+https://download.oracle.com/sunalerts/1000718.1.html","
+To disable these methods, add the following lines for each virtual
+host in your configuration file :
+
+    RewriteEngine on
+    RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+    RewriteRule .* - [F]
+
+Alternatively, note that Apache versions 1.3.34, 2.0.55, and 2.2
+support disabling the TRACE method natively via the 'TraceEnable'
+directive.
+
+Nessus sent the following TRACE request : 
+
+------------------------------ snip ------------------------------
+TRACE /Nessus750017718.html HTTP/1.1
+Connection: Close
+Host: 107.112.170.201
+Pragma: no-cache
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+Accept-Language: en
+Accept-Charset: iso-8859-1,*,utf-8
+
+------------------------------ snip ------------------------------
+
+and received the following response from the remote server :
+
+------------------------------ snip ------------------------------
+HTTP/1.0 200 OK
+Date: Wed, 17 Jul 2019 01:43:53 GMT
+Server: Apache/2.2.15 (Red Hat)
+Connection: close
+Content-Type: message/http
+
+
+TRACE /Nessus750017718.html HTTP/1.1
+Connection: Close
+Host: 107.112.170.201
+Pragma: no-cache
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+Accept-Language: en
+Accept-Charset: iso-8859-1,*,utf-8
+
+------------------------------ snip ------------------------------
+",56e64d96-5835-4ce5-b3f9-3e8404d05063,Active,107.112.170.201,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,Web Servers,5,3.7,E:U/RL:OF/RC:C,AV:N/AC:L/Au:N/C:P/I:N/A:N,5.3,4.6,E:U/RL:O/RC:C,AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+11213,CVE-2003-1567,5,Medium,107.112.170.201,TCP,443,HTTP TRACE / TRACK Methods Allowed,Debugging functions are enabled on the remote web server.,"The remote web server supports the TRACE and/or TRACK methods. TRACE
+and TRACK are HTTP methods that are used to debug web server
+connections.",Disable these methods. Refer to the plugin output for more information.,"https://www.cgisecurity.com/whitehat-mirror/WH-WhitePaper_XST_ebook.pdf
+http://www.apacheweek.com/issues/03-01-24
+https://download.oracle.com/sunalerts/1000718.1.html","
+To disable these methods, add the following lines for each virtual
+host in your configuration file :
+
+    RewriteEngine on
+    RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+    RewriteRule .* - [F]
+
+Alternatively, note that Apache versions 1.3.34, 2.0.55, and 2.2
+support disabling the TRACE method natively via the 'TraceEnable'
+directive.
+
+Nessus sent the following TRACE request : 
+
+------------------------------ snip ------------------------------
+TRACE /Nessus750017718.html HTTP/1.1
+Connection: Close
+Host: 107.112.170.201
+Pragma: no-cache
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+Accept-Language: en
+Accept-Charset: iso-8859-1,*,utf-8
+
+------------------------------ snip ------------------------------
+
+and received the following response from the remote server :
+
+------------------------------ snip ------------------------------
+HTTP/1.0 200 OK
+Date: Wed, 17 Jul 2019 01:43:53 GMT
+Server: Apache/2.2.15 (Red Hat)
+Connection: close
+Content-Type: message/http
+
+
+TRACE /Nessus750017718.html HTTP/1.1
+Connection: Close
+Host: 107.112.170.201
+Pragma: no-cache
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+Accept-Language: en
+Accept-Charset: iso-8859-1,*,utf-8
+
+------------------------------ snip ------------------------------
+",56e64d96-5835-4ce5-b3f9-3e8404d05063,Active,107.112.170.201,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,Web Servers,5,3.7,E:U/RL:OF/RC:C,AV:N/AC:L/Au:N/C:P/I:N/A:N,5.3,4.6,E:U/RL:O/RC:C,AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+11213,CVE-2004-2320,5,Medium,107.112.170.201,TCP,443,HTTP TRACE / TRACK Methods Allowed,Debugging functions are enabled on the remote web server.,"The remote web server supports the TRACE and/or TRACK methods. TRACE
+and TRACK are HTTP methods that are used to debug web server
+connections.",Disable these methods. Refer to the plugin output for more information.,"https://www.cgisecurity.com/whitehat-mirror/WH-WhitePaper_XST_ebook.pdf
+http://www.apacheweek.com/issues/03-01-24
+https://download.oracle.com/sunalerts/1000718.1.html","
+To disable these methods, add the following lines for each virtual
+host in your configuration file :
+
+    RewriteEngine on
+    RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+    RewriteRule .* - [F]
+
+Alternatively, note that Apache versions 1.3.34, 2.0.55, and 2.2
+support disabling the TRACE method natively via the 'TraceEnable'
+directive.
+
+Nessus sent the following TRACE request : 
+
+------------------------------ snip ------------------------------
+TRACE /Nessus750017718.html HTTP/1.1
+Connection: Close
+Host: 107.112.170.201
+Pragma: no-cache
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+Accept-Language: en
+Accept-Charset: iso-8859-1,*,utf-8
+
+------------------------------ snip ------------------------------
+
+and received the following response from the remote server :
+
+------------------------------ snip ------------------------------
+HTTP/1.0 200 OK
+Date: Wed, 17 Jul 2019 01:43:53 GMT
+Server: Apache/2.2.15 (Red Hat)
+Connection: close
+Content-Type: message/http
+
+
+TRACE /Nessus750017718.html HTTP/1.1
+Connection: Close
+Host: 107.112.170.201
+Pragma: no-cache
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+Accept-Language: en
+Accept-Charset: iso-8859-1,*,utf-8
+
+------------------------------ snip ------------------------------
+",56e64d96-5835-4ce5-b3f9-3e8404d05063,Active,107.112.170.201,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,Web Servers,5,3.7,E:U/RL:OF/RC:C,AV:N/AC:L/Au:N/C:P/I:N/A:N,5.3,4.6,E:U/RL:O/RC:C,AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+51192,,6.4,Medium,107.112.170.201,TCP,443,SSL Certificate Cannot Be Trusted,The SSL certificate for this service cannot be trusted.,"The server's X.509 certificate cannot be trusted. This situation can
+occur in three different ways, in which the chain of trust can be
+broken, as stated below :
+
+  - First, the top of the certificate chain sent by the
+    server might not be descended from a known public
+    certificate authority. This can occur either when the
+    top of the chain is an unrecognized, self-signed
+    certificate, or when intermediate certificates are
+    missing that would connect the top of the certificate
+    chain to a known public certificate authority.
+
+  - Second, the certificate chain may contain a certificate
+    that is not valid at the time of the scan. This can
+    occur either when the scan occurs before one of the
+    certificate's 'notBefore' dates, or after one of the
+    certificate's 'notAfter' dates.
+
+  - Third, the certificate chain may contain a signature
+    that either didn't match the certificate's information
+    or could not be verified. Bad signatures can be fixed by
+    getting the certificate with the bad signature to be
+    re-signed by its issuer. Signatures that could not be
+    verified are the result of the certificate's issuer
+    using a signing algorithm that Nessus either does not
+    support or does not recognize.
+
+If the remote host is a public host in production, any break in the
+chain makes it more difficult for users to verify the authenticity and 
+identity of the web server. This could make it easier to carry out 
+man-in-the-middle attacks against the remote host.",Purchase or generate a proper certificate for this service.,"https://www.itu.int/rec/T-REC-X.509/en
+https://en.wikipedia.org/wiki/X.509","
+The following certificate was part of the certificate chain
+sent by the remote host, but it has expired :
+
+|-Subject   : C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=attnxgsrv001m/E=root@attnxgsrv001m
+|-Not After : Oct 14 17:56:14 2016 GMT
+
+The following certificate was at the top of the certificate
+chain sent by the remote host, but it is signed by an unknown
+certificate authority :
+
+|-Subject : C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=attnxgsrv001m/E=root@attnxgsrv001m
+|-Issuer  : C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=attnxgsrv001m/E=root@attnxgsrv001m
+",56e64d96-5835-4ce5-b3f9-3e8404d05063,Active,107.112.170.201,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,General,6.4,,,AV:N/AC:L/Au:N/C:P/I:P/A:N,6.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+51192,,6.4,Medium,107.112.170.202,TCP,465,SSL Certificate Cannot Be Trusted,The SSL certificate for this service cannot be trusted.,"The server's X.509 certificate cannot be trusted. This situation can
+occur in three different ways, in which the chain of trust can be
+broken, as stated below :
+
+  - First, the top of the certificate chain sent by the
+    server might not be descended from a known public
+    certificate authority. This can occur either when the
+    top of the chain is an unrecognized, self-signed
+    certificate, or when intermediate certificates are
+    missing that would connect the top of the certificate
+    chain to a known public certificate authority.
+
+  - Second, the certificate chain may contain a certificate
+    that is not valid at the time of the scan. This can
+    occur either when the scan occurs before one of the
+    certificate's 'notBefore' dates, or after one of the
+    certificate's 'notAfter' dates.
+
+  - Third, the certificate chain may contain a signature
+    that either didn't match the certificate's information
+    or could not be verified. Bad signatures can be fixed by
+    getting the certificate with the bad signature to be
+    re-signed by its issuer. Signatures that could not be
+    verified are the result of the certificate's issuer
+    using a signing algorithm that Nessus either does not
+    support or does not recognize.
+
+If the remote host is a public host in production, any break in the
+chain makes it more difficult for users to verify the authenticity and 
+identity of the web server. This could make it easier to carry out 
+man-in-the-middle attacks against the remote host.",Purchase or generate a proper certificate for this service.,"https://www.itu.int/rec/T-REC-X.509/en
+https://en.wikipedia.org/wiki/X.509","
+The following certificate was at the top of the certificate
+chain sent by the remote host, but it is signed by an unknown
+certificate authority :
+
+|-Subject : C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=zrdm6bvota05ngm002/E=root@zrdm6bvota05ngm002
+|-Issuer  : C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=zrdm6bvota05ngm002/E=root@zrdm6bvota05ngm002
+",dbdba6a1-c268-45f1-9368-6dea2baf4f70,Active,107.112.170.202,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,General,6.4,,,AV:N/AC:L/Au:N/C:P/I:P/A:N,6.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+51192,,6.4,Medium,107.112.170.202,TCP,443,SSL Certificate Cannot Be Trusted,The SSL certificate for this service cannot be trusted.,"The server's X.509 certificate cannot be trusted. This situation can
+occur in three different ways, in which the chain of trust can be
+broken, as stated below :
+
+  - First, the top of the certificate chain sent by the
+    server might not be descended from a known public
+    certificate authority. This can occur either when the
+    top of the chain is an unrecognized, self-signed
+    certificate, or when intermediate certificates are
+    missing that would connect the top of the certificate
+    chain to a known public certificate authority.
+
+  - Second, the certificate chain may contain a certificate
+    that is not valid at the time of the scan. This can
+    occur either when the scan occurs before one of the
+    certificate's 'notBefore' dates, or after one of the
+    certificate's 'notAfter' dates.
+
+  - Third, the certificate chain may contain a signature
+    that either didn't match the certificate's information
+    or could not be verified. Bad signatures can be fixed by
+    getting the certificate with the bad signature to be
+    re-signed by its issuer. Signatures that could not be
+    verified are the result of the certificate's issuer
+    using a signing algorithm that Nessus either does not
+    support or does not recognize.
+
+If the remote host is a public host in production, any break in the
+chain makes it more difficult for users to verify the authenticity and 
+identity of the web server. This could make it easier to carry out 
+man-in-the-middle attacks against the remote host.",Purchase or generate a proper certificate for this service.,"https://www.itu.int/rec/T-REC-X.509/en
+https://en.wikipedia.org/wiki/X.509","
+The following certificate was part of the certificate chain
+sent by the remote host, but it has expired :
+
+|-Subject   : C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=attnxgsrv001m/E=root@attnxgsrv001m
+|-Not After : Oct 14 17:56:14 2016 GMT
+
+The following certificate was at the top of the certificate
+chain sent by the remote host, but it is signed by an unknown
+certificate authority :
+
+|-Subject : C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=attnxgsrv001m/E=root@attnxgsrv001m
+|-Issuer  : C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=attnxgsrv001m/E=root@attnxgsrv001m
+",dbdba6a1-c268-45f1-9368-6dea2baf4f70,Active,107.112.170.202,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,General,6.4,,,AV:N/AC:L/Au:N/C:P/I:P/A:N,6.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+35291,CVE-2004-2761,5,Medium,107.112.170.202,TCP,465,SSL Certificate Signed Using Weak Hashing Algorithm,"An SSL certificate in the certificate chain has been signed using a
+weak hash algorithm.","The remote service uses an SSL certificate chain that has been signed
+using a cryptographically weak hashing algorithm (e.g. MD2, MD4, MD5,
+or SHA1). These signature algorithms are known to be vulnerable to
+collision attacks. An attacker can exploit this to generate another
+certificate with the same digital signature, allowing an attacker to
+masquerade as the affected service.
+
+Note that this plugin reports all SSL certificate chains signed with
+SHA-1 that expire after January 1, 2017 as vulnerable. This is in
+accordance with Google's gradual sunsetting of the SHA-1 cryptographic
+hash algorithm.
+
+Note that certificates in the chain that are contained in the Nessus
+CA database (known_CA.inc) have been ignored.",Contact the Certificate Authority to have the certificate reissued.,"https://tools.ietf.org/html/rfc3279
+http://www.nessus.org/u?9bb87bf2
+http://www.nessus.org/u?e120eea1
+http://www.nessus.org/u?5d894816
+http://www.nessus.org/u?51db68aa
+http://www.nessus.org/u?9dc7bfba","
+The following certificates were part of the certificate chain sent by
+the remote host, but contain hashes that are considered to be weak.
+
+|-Subject             : C=--/ST=SomeState/L=SomeCity/O=SomeOrganization/OU=SomeOrganizationalUnit/CN=zrdm6bvota05ngm002/E=root@zrdm6bvota05ngm002
+|-Signature Algorithm : SHA-1 With RSA Encryption
+|-Valid From          : Oct 31 19:58:52 2018 GMT
+|-Valid To            : Oct 31 19:58:52 2019 GMT
+",dbdba6a1-c268-45f1-9368-6dea2baf4f70,Active,107.112.170.202,,,Linux Kernel 2.6 on Red Hat Enterprise Linux 6,,General,5,3.9,E:POC/RL:OF/RC:C,AV:N/AC:L/Au:N/C:N/I:P/A:N,7.5,6.7,E:P/RL:O/RC:C,AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+51192,,6.4,Medium,107.112.170.203,TCP,2738,SSL Certificate Cannot Be Trusted,The SSL certificate for this service cannot be trusted.,"The server's X.509 certificate cannot be trusted. This situation can
+occur in three different ways, in which the chain of trust can be
+broken, as stated below :
+
+  - First, the top of the certificate chain sent by the
+    server might not be descended from a known public
+    certificate authority. This can occur either when the
+    top of the chain is an unrecognized, self-signed
+    certificate, or when intermediate certificates are
+    missing that would connect the top of the certificate
+    chain to a known public certificate authority.
+
+  - Second, the certificate chain may contain a certificate
+    that is not valid at the time of the scan. This can
+    occur either when the scan occurs before one of the
+    certificate's 'notBefore' dates, or after one of the
+    certificate's 'notAfter' dates.
+
+  - Third, the certificate chain may contain a signature
+    that either didn't match the certificate's information
+    or could not be verified. Bad signatures can be fixed by
+    getting the certificate with the bad signature to be
+    re-signed by its issuer. Signatures that could not be
+    verified are the result of the certificate's issuer
+    using a signing algorithm that Nessus either does not
+    support or does not recognize.
+
+If the remote host is a public host in production, any break in the
+chain makes it more difficult for users to verify the authenticity and 
+identity of the web server. This could make it easier to carry out 
+man-in-the-middle attacks against the remote host.",Purchase or generate a proper certificate for this service.,"https://www.itu.int/rec/T-REC-X.509/en
+https://en.wikipedia.org/wiki/X.509","
+The following certificate was at the top of the certificate
+chain sent by the remote host, but it is signed by an unknown
+certificate authority :
+
+|-Subject : C=US/ST=California/O=Peregrine Systems, Inc./OU=Development
+|-Issuer  : C=US/ST=California/O=Peregrine Systems, Inc./OU=Development
+",f0cc249a-a360-4258-8ae2-91c598ea93e1,Active,107.112.170.203,,,,,General,6.4,,,AV:N/AC:L/Au:N/C:P/I:P/A:N,6.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N,,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+35291,CVE-2004-2761,5,Medium,107.112.170.203,TCP,2738,SSL Certificate Signed Using Weak Hashing Algorithm,"An SSL certificate in the certificate chain has been signed using a
+weak hash algorithm.","The remote service uses an SSL certificate chain that has been signed
+using a cryptographically weak hashing algorithm (e.g. MD2, MD4, MD5,
+or SHA1). These signature algorithms are known to be vulnerable to
+collision attacks. An attacker can exploit this to generate another
+certificate with the same digital signature, allowing an attacker to
+masquerade as the affected service.
+
+Note that this plugin reports all SSL certificate chains signed with
+SHA-1 that expire after January 1, 2017 as vulnerable. This is in
+accordance with Google's gradual sunsetting of the SHA-1 cryptographic
+hash algorithm.
+
+Note that certificates in the chain that are contained in the Nessus
+CA database (known_CA.inc) have been ignored.",Contact the Certificate Authority to have the certificate reissued.,"https://tools.ietf.org/html/rfc3279
+http://www.nessus.org/u?9bb87bf2
+http://www.nessus.org/u?e120eea1
+http://www.nessus.org/u?5d894816
+http://www.nessus.org/u?51db68aa
+http://www.nessus.org/u?9dc7bfba","
+The following certificates were part of the certificate chain sent by
+the remote host, but contain hashes that are considered to be weak.
+
+|-Subject             : C=US/ST=California/O=Peregrine Systems, Inc./OU=Development
+|-Signature Algorithm : MD5 With RSA Encryption
+|-Valid From          : Nov 14 19:02:11 2005 GMT
+|-Valid To            : Apr 01 19:02:11 2033 GMT
+",f0cc249a-a360-4258-8ae2-91c598ea93e1,Active,107.112.170.203,,,,,General,5,3.9,E:POC/RL:OF/RC:C,AV:N/AC:L/Au:N/C:N/I:P/A:N,7.5,6.7,E:P/RL:O/RC:C,AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N,,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+51192,,6.4,Medium,107.112.171.44,TCP,443,SSL Certificate Cannot Be Trusted,The SSL certificate for this service cannot be trusted.,"The server's X.509 certificate cannot be trusted. This situation can
+occur in three different ways, in which the chain of trust can be
+broken, as stated below :
+
+  - First, the top of the certificate chain sent by the
+    server might not be descended from a known public
+    certificate authority. This can occur either when the
+    top of the chain is an unrecognized, self-signed
+    certificate, or when intermediate certificates are
+    missing that would connect the top of the certificate
+    chain to a known public certificate authority.
+
+  - Second, the certificate chain may contain a certificate
+    that is not valid at the time of the scan. This can
+    occur either when the scan occurs before one of the
+    certificate's 'notBefore' dates, or after one of the
+    certificate's 'notAfter' dates.
+
+  - Third, the certificate chain may contain a signature
+    that either didn't match the certificate's information
+    or could not be verified. Bad signatures can be fixed by
+    getting the certificate with the bad signature to be
+    re-signed by its issuer. Signatures that could not be
+    verified are the result of the certificate's issuer
+    using a signing algorithm that Nessus either does not
+    support or does not recognize.
+
+If the remote host is a public host in production, any break in the
+chain makes it more difficult for users to verify the authenticity and 
+identity of the web server. This could make it easier to carry out 
+man-in-the-middle attacks against the remote host.",Purchase or generate a proper certificate for this service.,"https://www.itu.int/rec/T-REC-X.509/en
+https://en.wikipedia.org/wiki/X.509","
+The following certificate was at the top of the certificate
+chain sent by the remote host, but it is signed by an unknown
+certificate authority :
+
+|-Subject : L=Austin/ST=Texas/C=US/O=Gemalto/OU=GGS/CN=*.eng.mobilephone.net
+|-Issuer  : C=US/O=Gemalto/OU=GGS/CN=ATT Certificate Authority
+",d0172b78-abc6-416b-8cc5-7f3f1ad14a37,Active,107.112.171.44,,,FortiOS on Fortinet FortiGate,,General,6.4,,,AV:N/AC:L/Au:N/C:P/I:P/A:N,6.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N,firewall,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z
+51192,,6.4,Medium,107.112.171.47,TCP,443,SSL Certificate Cannot Be Trusted,The SSL certificate for this service cannot be trusted.,"The server's X.509 certificate cannot be trusted. This situation can
+occur in three different ways, in which the chain of trust can be
+broken, as stated below :
+
+  - First, the top of the certificate chain sent by the
+    server might not be descended from a known public
+    certificate authority. This can occur either when the
+    top of the chain is an unrecognized, self-signed
+    certificate, or when intermediate certificates are
+    missing that would connect the top of the certificate
+    chain to a known public certificate authority.
+
+  - Second, the certificate chain may contain a certificate
+    that is not valid at the time of the scan. This can
+    occur either when the scan occurs before one of the
+    certificate's 'notBefore' dates, or after one of the
+    certificate's 'notAfter' dates.
+
+  - Third, the certificate chain may contain a signature
+    that either didn't match the certificate's information
+    or could not be verified. Bad signatures can be fixed by
+    getting the certificate with the bad signature to be
+    re-signed by its issuer. Signatures that could not be
+    verified are the result of the certificate's issuer
+    using a signing algorithm that Nessus either does not
+    support or does not recognize.
+
+If the remote host is a public host in production, any break in the
+chain makes it more difficult for users to verify the authenticity and 
+identity of the web server. This could make it easier to carry out 
+man-in-the-middle attacks against the remote host.",Purchase or generate a proper certificate for this service.,"https://www.itu.int/rec/T-REC-X.509/en
+https://en.wikipedia.org/wiki/X.509","
+The following certificate was at the top of the certificate
+chain sent by the remote host, but it is signed by an unknown
+certificate authority :
+
+|-Subject : L=Austin/ST=Texas/C=US/O=Gemalto/OU=GGS/CN=*.eng.mobilephone.net
+|-Issuer  : C=US/O=Gemalto/OU=GGS/CN=ATT Certificate Authority
+",3f0e074b-eec8-48c2-94b0-29127a7694d0,Active,107.112.171.47,,,Linux Kernel 2.2,,General,6.4,,,AV:N/AC:L/Au:N/C:P/I:P/A:N,6.5,,,AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N,general-purpose,2019-07-17T01:01:04.439Z,2019-07-17T02:13:34.295Z

@@ -1,0 +1,10 @@
+bear
+pig
+dog
+duck
+cow
+lion
+tiger
+girafle
+lamb
+dove
